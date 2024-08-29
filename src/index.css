@@ -629,6 +629,10 @@ input[type="checkbox"]:checked::after {
 /* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
 /* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
 /* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+.Forms{
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
 
 .Forms .NavBar{
   display: flex;
@@ -641,6 +645,7 @@ input[type="checkbox"]:checked::after {
   top: 0;
   width: 100%;
   z-index: 1;
+  background-color: transparent;
 }
 .Forms .NavBar .NavLeft{
   display: flex;
@@ -724,7 +729,7 @@ input[type="checkbox"]:checked::after {
   font-size: 1.7vw;
   line-height:130%;
 }
-.Fork .box{
+.Fork .box22{
   width: 19vw;
   height: 20vh;
   border: #a596c4 solid 2px;
@@ -736,7 +741,7 @@ input[type="checkbox"]:checked::after {
   align-items: start;
   justify-content: space-between;
 }
-.Fork .box:hover{
+.Fork .box22:hover{
   border: #44375f solid 2px;
 }
 

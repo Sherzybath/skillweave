@@ -17,6 +17,9 @@ const FreelanceQuiz = ({ onNext }) => {
 
   return (
     <div className="quiz-wrapper">
+      <div className="progress-indicator">
+        <p className="progress-text">1/3</p> {/* Progress indicator */}
+      </div>
       <div className="quiz-container">
         <h2 className="quiz-question">A few quick questions: first, have you freelanced before?</h2>
         <p className="quiz-description">

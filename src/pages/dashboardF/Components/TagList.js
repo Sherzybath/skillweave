@@ -1,13 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBell, faCircleQuestion, faMessage} from '@fortawesome/free-regular-svg-icons';
+
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
-const TagList = () => {
+const TagList = ({onSearch , onSearchTerm}) => {
   return (
     <div className='TagList'>
         <div className='ManualSearch'>
         <FontAwesomeIcon icon={faMagnifyingGlass} className='icons'/>
-        <input placeholder='Search'></input>
+        <input placeholder='Search' value={onSearchTerm}
+          onChange={(e) => onSearch(e.target.value)}></input>
         </div>
       <span>Freelancer</span>
       <div className='line'></div>

@@ -1001,3 +1001,17 @@ input[type="checkbox"]:checked::after {
   width: 3.3vw;
 }
 
+/* Freelancer A */
+/* Freelancer A */
+/* Freelancer A */
+/* Freelancer A */
+.progress-indicator {
+  text-align:left;
+  margin-bottom: 1rem;
+}
+
+.progress-text {
+  font-weight: bold;
+  font-size: 2rem;
+  color: #133b3a; /* Change this color as needed */
+}

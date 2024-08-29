@@ -1,7 +1,8 @@
-import { BrowserRouter as Router, Route, Routes, link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import Homepage from "./pages/home/components/Homepage";
 import Dashboard from "./pages/dashboard/Components/Dashboard";
 import Forms from "./pages/forms/components/Forms";
+import DashboardF from "./pages/dashboardF/Components/DashboardF";
 function App() {
   return (
     <div className="App">
@@ -9,8 +10,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />}/>
           <Route path="/Forms" element={<Forms />}/>
-          
           <Route path="/dashboard" element={<Dashboard />}/>
+          <Route path="/dashboardF" element={<DashboardF/>}></Route>
         </Routes>
       </Router>
     </div>

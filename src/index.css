@@ -13,7 +13,7 @@
   font-weight: 500;
 }
 .App{
-  background-color: #f9f9f9;
+  background-color: #fff4f0;
 }
 
 /* Nav */
@@ -25,8 +25,8 @@
   flex-direction: row;
   justify-content: space-between;
   min-height: 9.5vh;
-  background-color: #d3d3d3;
-  padding: 20px 50px;
+  background-color: #fff4f0;
+  padding: 1.5vw 4.3vw;
   align-items: center;
   position: fixed;
   top: 0;
@@ -37,6 +37,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 1.5vw;
 }
 .App .NavBar .NavMiddle{
   padding-left: 7vw;
@@ -179,10 +180,9 @@
   color: #000;
 }
 
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+/* FORMS */
+/* FORMS */
+/* FORMS */
 
 .forms {
   display: flex;
@@ -395,6 +395,7 @@ html, body { margin: 0; height: 100%; }
   width: 18vw;
   gap: 0.7vw;
   transition: 0.3s ease-in-out;
+  font-size: 1vw;
 }
 .Dashboard .NavBar .NavLeft .Search:focus-within{
   outline: 2px solid #000;
@@ -443,8 +444,8 @@ html, body { margin: 0; height: 100%; }
 /* Basic checkbox styling */
 input[type="checkbox"] {
   appearance: none;
-  width: 24px; /* Increased width for better visibility */
-  height: 24px; /* Increased height for better visibility */
+  width: 24px; 
+  height: 24px; 
   background-color: #133b3a;
   border: 2px solid #133b3a;
   border-radius: 4px;
@@ -622,7 +623,7 @@ input[type="checkbox"]:checked::after {
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: 1.5em; /* Adjust based on your font size */
-  max-height: 3em; /* line-height * number of lines */
+  max-height: 3.3em; /* line-height * number of lines */
 }
 
 
@@ -903,3 +904,101 @@ input[type="checkbox"]:checked::after {
   padding-right: 4rem;
 }
 
+
+/* FRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNNCCCCCCCCCCCCEEEEEEEEEEEEEERRRRRRRRRRRR */
+/* FRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNNCCCCCCCCCCCCEEEEEEEEEEEEEERRRRRRRRRRRR */
+/* FRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNNCCCCCCCCCCCCEEEEEEEEEEEEEERRRRRRRRRRRR */
+.notices2{
+  display: flex;
+  flex-direction: row;
+  gap: 3.3vw;
+  max-width: 73%;
+  flex-wrap: wrap; 
+}
+.post2{
+  background-color: #aac7c6;
+  width: 20vw;
+  height: 27vw;
+  border-radius: 1vw;
+  color: #1b1b1b;
+}
+.post2 .thumbnail{
+  width: 20vw;
+  height: 32vh;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
+  object-fit: cover;
+}
+.post2 .basic span, strong{
+  color: #1b1b1b;
+}
+.post2 .basic{
+  padding: 0.7vw 1vw;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7vw;
+
+}
+.post2 .basic span:nth-child(1){
+  font-size: 1vw;
+}
+
+.post2 .basic .liner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.post2 .basic .liner span{
+  color: #6b6b6b;
+  font-weight: 400;
+}
+.post2 .basic span .icon path{
+  color: #6b6b6b;
+}
+
+.post2 .profile{
+  padding: 1vw 1vw;
+  border-top: 1px solid #6b6b6b;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.post2 .profile span{
+  font-size: 1.3vw;
+  color: #1b1b1b;
+}
+.post2 .Reviews{
+  width: 5.2vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.3vw;
+}
+.post2 .profile .Reviews span:nth-child(2){
+  font-size: 1vw;
+
+}
+.post2 .profile .Reviews span:nth-child(3){
+
+  color: #636363;
+  font-size: 1vw;
+}
+.post2 .profile .Reviews span:nth-child(2){
+
+  
+}
+.post2 .star{
+
+}
+.post2 .star path{
+  color: #fff1aa;
+  
+}
+
+.post2 .profile .dp{
+  height: 3.3vw;
+  width: 3.3vw;
+}
+>>>>>>> 733ae741e66cc030d87e3e00f461b4f6b1b4ed05

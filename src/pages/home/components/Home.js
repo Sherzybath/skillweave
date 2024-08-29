@@ -1,5 +1,5 @@
 import React from 'react'
-
+import {Link} from "react-router-dom"
 const Home = () => {
   return (
     <div className='Home'>
@@ -7,7 +7,8 @@ const Home = () => {
         <span>End your work</span>
         <span>Woes today!</span>
         <span>We provide business blah blah blah blah blah blah blah blah blah blah blah blah</span>
-        <button>Find Work</button>
+        <Link to="/dashboard"><button>Find Work</button> </Link>
+        
       </div>
       <div className='HomeMiddle Column'>
       <span>BIG ASS RANDOM PIC</span>
@@ -17,7 +18,7 @@ const Home = () => {
         <span>Find great work</span>
         <span>Oppurtunities</span>
         <span>Search for great work blah blah blah blah blah blah blah blah blah blah blah blah</span>
-        <button>Find Talent</button>
+        <Link to="/dashboardF"><button>Find Talent</button> </Link>
       </div>
     </div>
   )

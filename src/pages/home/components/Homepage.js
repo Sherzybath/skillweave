@@ -2,6 +2,7 @@ import Main from "./Main";
 import Nav from "./Nav"
 import SignUp from "./SignUp";
 import Login from "./Login"
+
 function changeZIndex(boxNumber) {
   var box1 = document.getElementById("signContainer");
   var box2 = document.getElementById("loginContainer");

@@ -13,7 +13,7 @@
   font-weight: 500;
 }
 .App{
-  background-color: #f9f9f9;
+  background-color: #fff4f0;
 }
 
 /* Nav */
@@ -25,8 +25,8 @@
   flex-direction: row;
   justify-content: space-between;
   min-height: 9.5vh;
-  background-color: #d3d3d3;
-  padding: 20px 50px;
+  background-color: #fff4f0;
+  padding: 1.5vw 4.3vw;
   align-items: center;
   position: fixed;
   top: 0;
@@ -37,6 +37,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-size: 1.5vw;
 }
 .App .NavBar .NavMiddle{
   padding-left: 7vw;
@@ -179,10 +180,9 @@
   color: #000;
 }
 
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
-/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+/* FORMS */
+/* FORMS */
+/* FORMS */
 
 .forms {
   display: flex;
@@ -443,8 +443,8 @@ html, body { margin: 0; height: 100%; }
 /* Basic checkbox styling */
 input[type="checkbox"] {
   appearance: none;
-  width: 24px; /* Increased width for better visibility */
-  height: 24px; /* Increased height for better visibility */
+  width: 24px; 
+  height: 24px; 
   background-color: #133b3a;
   border: 2px solid #133b3a;
   border-radius: 4px;

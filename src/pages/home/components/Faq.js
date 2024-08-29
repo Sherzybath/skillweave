@@ -2,7 +2,7 @@ import React from 'react';
 
 function FAQs() {
   return (
-    <section className="py-8 bg-[#f9f9f9] mb-0 mt-16">
+    <section className="py-8 bg-[#fff4f0] mb-0 mt-16">
       <div className="container mx-auto px-6 mt-16 animate-pulse-faq">
         <div className="flex flex-col md:flex-row items-start justify-between">
           

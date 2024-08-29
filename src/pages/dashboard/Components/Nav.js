@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import logo from '../Assets/SherzyChibi.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell, faCircleQuestion, faMessage} from '@fortawesome/free-regular-svg-icons';
@@ -7,7 +8,7 @@ const Nav = () => {
   return (
     <div className='NavBar'>
         <div className='NavLeft'>
-            <span>SkillWeave</span>
+            <span><Link to="/"> SkillWeave</Link></span>
             <div className='Search'>
               
                 <FontAwesomeIcon icon={faMagnifyingGlass} className='icons'/>

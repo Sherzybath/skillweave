@@ -1,9 +1,9 @@
 import React from 'react'
-
+import {Link} from "react-router-dom"
 const Nav = ({pare}) => {
   return (
     <div className='NavBar'>
-        <div className='NavLeft'>SkillWeave</div>
+        <div className='NavLeft'><Link to="/">SkillWeave</Link></div>
         <div className='NavMiddle'>
             <button>About</button>
             <button>FAQ</button>

@@ -1,13 +1,752 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Main{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*{
+  color: #44375f;
+  font-weight: 500;
+}
+.App{
+  background-color: #f9f9f9;
+}
+
+/* Nav */
+/* Nav */
+/* Nav */
+
+.App .NavBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 9.5vh;
+  background-color: #d3d3d3;
+  padding: 20px 50px;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.App .NavBar .NavLeft{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.App .NavBar .NavMiddle{
+  padding-left: 7vw;
+  display: flex;
+  flex-direction: row;
+  gap: 3.3vw;
+}
+.App .NavBar .NavRight{
+  display: flex;
+  flex-direction: row;
+  gap: 3vw;
+}
+.App .NavBar .NavRight .ColorButton{
+  background-color: #f48b29;
+  padding: 10px 20px;
+  border-radius: 1vw;
+  text-align: center;
+  color: #fdf3e9;
+  display: table-cell;
+  vertical-align: middle;
+}
+/* Home */
+/* Home */
+/* Home */
+.Column{
+  display: flex;
+  flex-direction: column;
+
+}
+.Home{
+  height: 80vh;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+ justify-content: space-between;
+
+}
+.HomeLeft span:nth-child(1){
+  font-size: 3vw;
+  font-weight: 600;
+}
+.HomeLeft span:nth-child(2){
+  font-size: 3.3vw;
+  font-weight: 900;
+}
+.HomeLeft span:nth-child(3){
+  margin-top: 1vw;
+  font-size: 0.8vw;
+  font-weight: 500;
+}
+.Home Button{
+  margin-top: 2vw;
+  background-color: #130035;
+  width: 9vw;
+  height: 3vw;
+  color: #edebf0;
+  display: table-cell;
+  vertical-align: middle;
+  border-radius: 2vw;
+}
+
+
+.HomeRight span:nth-child(1){
+  font-size: 3vw;
+  font-weight: 600;
+}
+.HomeRight span:nth-child(2){
+  font-size: 3.3vw;
+  font-weight: 1000;
+}
+.HomeRight span:nth-child(3){
+  margin-top: 1vw;
+  font-size: 0.8vw;
+  font-weight: 500;
+}
+.HomeMiddle{
+  font-size: 5vw;
+  text-align: center;
+}
+
+.Home .HomeRight, .Home .HomeLeft{
+  padding: 3vw 4.3vw;
+  max-width: 30vw;
+  min-width: 30vw;
+}
+
+/* SignUp */
+/* SignUp */
+/* SignUp */
+.box {
+  position: fixed;
+  z-index: -1;
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+}
+.myDiv {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35vw;
+  height: 90vh;
+  background-color: #d1cfc8;
+  position: absolute;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.tt {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #babbba;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.divClose {
+  margin-left: auto;
+  margin-right: 10px;
+  justify-content: flex-end;
+  border: none;
+  background-color: transparent;
+  height: 35px;
+  width: 35px;
+  border-radius: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.divClose:hover {
+  background-color: #c7c9cf;
+}
+
+.material-symbols-outlined {
+  color: #000;
+}
+
+/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+/* FFFFFFFFFFFFFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM */
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  flex-grow: 1;
+  padding-top: 3vw;
+  padding-bottom: 0vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  gap: 2vw;
+}
+
+.forms .heading span {
+  color: var(--tertiary-color);
+  /* color: #fff; */
+  font-size: 3vw;
+  font-weight: 800;
+  text-align: center;
+}
+.forms input {
+  color: var(--tertiary-color);
+  width: 25vw;
+  height: 2vw;
+  font-size: 1vw;
+  font-weight: 500;
+  border-radius: 4px;
+  border-radius: 10px;
+  padding: 0.5vw;
+}
+
+.confirm .submit {
+  background-color: #130035;
+  border-radius: 14px;
+  text-align: center;
+  width: 15vw;
+  height: 3.5vw;
+  color: white;
+  font-size: 1vw;
+}
+
+.enroll input {
+  background-color: #f1e5f2;
+}
+
+.password input {
+  background-color: #f1e5f2;
+}
+
+
+
+.myDiv .liner{
+  display: flex;
+  flex-direction: row;
+}
+
+.myDiv .liner h5 {
+  margin-top: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--tertiary-color);
+}
+.myDiv .liner .redirect {
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--tertiary-color);
+}
+.myDiv .liner .redirect u {
+  color: var(--tertiary-color);
+}
+.spacer {
+  width: 5px;
+  height: 5px;
+}
+.myDiv .liner {
+  padding-top: 25px;
+  margin-bottom: 275px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
+}
+
+form div h3 {
+  font-size: 20px;
+  color: #000;
+}
+/* About */
+/* About */
+/* About */
+.About{
+  background-color: #13544e;
+  padding: 3vw 4.3vw;
+  color: #edebf0;
+  display: flex;
+  flex-direction: row;
+   gap: 2vw;
+}
+.About .Desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 60vw;
+}
+.About .Desc span{
+  color: #edebf0;
+}
+.About .Desc span:nth-child(1){
+  font-size: 1.6vw;
+}
+.About .Desc span:nth-child(2){
+  margin-top: 2vw;
+  font-size: 3.4vw;
+  line-height: 100%;
+}
+.About .Desc span:nth-child(3){
+  margin-top: 0.4vw;
+  font-size: 3.4vw;
+  color: #91e6b3;
+  line-height: 100%;
+}
+.About .Desc span:nth-child(4){
+  margin-top: 0.4vw;
+  font-size: 3.4vw;
+  color: #91e6b3;
+  line-height: 100%;
+}
+.About .Desc span:nth-child(5){
+  margin-top: 2vw;
+  font-size: 1.3vw;
+}
+
+
+.About .BigImg{
+  width: 30vw;
+  height: 30vw;
+  background-color: #13544e;
+  border-radius: 3vw;
+}
+/* FAQ */
+/* FAQ */
+/* FAQ */
+
+
+/* FOOTER */
+ 
+/* FOOTER */
+/* FOOTER */
+
+
+
+/* DDDDDDDDDDDAAAAAAAAAAAAAAAAAAAAAASSSSSSSSSSSSSSSSSSSSSSSSSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */
+/* DDDDDDDDDDDAAAAAAAAAAAAAAAAAAAAAASSSSSSSSSSSSSSSSSSSSSSSSSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */
+/* DDDDDDDDDDDAAAAAAAAAAAAAAAAAAAAAASSSSSSSSSSSSSSSSSSSSSSSSSSSHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH */
+
+*{
+  color: #44375f;
+  font-weight: 500;
+}
+html, body { margin: 0; height: 100%; } 
+.Dashboard{
+  background-color: #fff4f0;
+  display: flex;
+}
+
+.Dashboard .MainCont{
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;  
+}
+
+
+
+.Dashboard .NavBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 9.5vh;
+  padding: 1.5vw 4.3vw;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: #fff4f0;
+}
+.Dashboard .NavBar .NavLeft{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5vw;
+}
+.Dashboard .NavBar .NavLeft span{
+  font-size: 1.5vw;
+}
+.Dashboard .NavBar .NavLeft .Search{
+  outline: 2px solid #d0d0d0;
+  height: 2.5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0.5vw;
+  border-radius: 2vw;
+  width: 18vw;
+  gap: 0.7vw;
+  transition: 0.3s ease-in-out;
+}
+.Dashboard .NavBar .NavLeft .Search:focus-within{
+  outline: 2px solid #000;
+}
+.Dashboard .NavBar .NavLeft input{
+  background-color: transparent;
+}
+
+.Dashboard .NavBar .NavLeft input:focus{
+  outline: none;
+}
+.Dashboard .NavBar .NavMiddle{
+  padding-left: 7vw;
+  display: flex;
+  flex-direction: row;
+  gap: 3.3vw;
+}
+.Dashboard .NavBar .NavRight{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+  align-items: center;
+}
+.Dashboard .NavBar .NavRight img{
+  width: 2.5vw;
+  height: 2.5vw;
+}
+.icons{
+  font-size: 1.5vw;
+}
+
+.main{
+  height: 100vh;
+}
+
+/* HOME */
+/* HOME */
+/* HOME */
+
+
+
+
+/* FILTER */
+/* FILTER */
+/* FILTER */
+/* Basic checkbox styling */
+input[type="checkbox"] {
+  appearance: none;
+  width: 24px; /* Increased width for better visibility */
+  height: 24px; /* Increased height for better visibility */
+  background-color: #133b3a;
+  border: 2px solid #133b3a;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* When checked, apply styling */
+input[type="checkbox"]:checked {
+  background-color: #133b3a;
+  border-color: #133b3a;
+}
+
+/* Custom checkmark */
+input[type="checkbox"]:checked::after {
+  content: '\2713'; /* Unicode for a checkmark */
+  color: #fff4f0; /* Desired color */
+  font-size: 20px; /* Increase font size for bold appearance */
+  font-weight: bold; /* Make the checkmark bold */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/* CHATBOT */
+/* CHATBOT */
+/* CHATBOT */
+.Chatbot{
+  width: 40vw;
+  height: 100vh;
+  background-color: #fff7f0;
+  border-left: #d0d0d0 3px solid;
+  padding: 2vw 2vw;
+  transition: 0.2s ease-in-out;
+}
+.ChatNav .icons{
+  font-size: 2vw;
+}
+.ChatNav{
+  height: 5vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.ChattingArea{
+  width: 100%;
+  height: 80vh;
+}
+
+.ChatInput{
+  width: 100%;
+  height: 6vh;
+  border-radius: 5vw;
+  outline: 3px solid #968aae;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1.2vw;
+}
+.ChatInput:focus-within{
+  outline: 3px solid #44375f;
+}
+
+.ChatInput input{
+  height: 5vh;
+  width: 95%;
+  background-color: transparent;
+}
+
+.ChatInput input:focus{
+  outline: none;
+}
+
+
+
+/* NOTICE BOARD */
+/* NOTICE BOARD */
+/* NOTICE BOARD */
+.NoticeBoard{
+  display: flex;
+  flex-direction: row;
+  padding: 1.5vw 4.3vw;
+  justify-content: space-between;
+}
+
+
+.TagList{
+  padding: 1.5vw 4.3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+
+}
+
+
+.TagList .ManualSearch{
+  outline: 2px solid #d0d0d0;
+  height: 2.5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0.5vw;
+  border-radius: 2vw;
+  width: 30vw;
+  gap: 0.7vw;
+  transition: 0.3s ease-in-out;
+}
+.TagList .ManualSearch:focus-within{
+  outline: 2px solid #000;
+}
+.TagList .ManualSearch input{
+  background-color: transparent;
+}
+
+.TagList .ManualSearch input:focus{
+  outline: none;
+}
+
+.TagList span{
+  margin-right: 3vw;
+  margin-top: 2vw;
+  font-size: 3vw;
+  border-bottom: #44375f solid 5px;
+}
+
+.TagList .line{
+  width: 100%;
+  border: 1px solid #d0d0d0;
+}
+
+/* NOTICES */
+/* NOTICES */
+/* NOTICES */
+.notices{
+  width: 75%;
+}
+.post:nth-child(1){
+  border: none;
+}
+.post{
+  padding: 2vw 2vw;
+  max-height: 35vh;
+  
+  background-color: transparent;
+  transition: 0.07s ease-in-out;
+  border-top: 1px solid #1b1b1b;
+}
+.post:hover{
+  background-color: #aac7c6;
+}
+.post h2{
+  font-size: 1.7vw;
+  color: #1b1b1b;
+}
+.post p:nth-child(2){
+  margin-top: 1vw;
+}
+.post p:nth-child(4){
+  margin-top: 1vw;
+}
+.post p,  .post strong{
+  color: #133b3a;
+  font-weight: 500;
+}
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to display */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em; /* Adjust based on your font size */
+  max-height: 3em; /* line-height * number of lines */
+}
+
+
+/* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+/* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+/* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
+
+.Forms .NavBar{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 9.5vh;
+  padding: 1.5vw 4.3vw;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.Forms .NavBar .NavLeft{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.5vw;
+}
+.Forms .NavBar .NavLeft span{
+  font-size:1.5vw;
+}
+.Forms .NavBar .NavLeft .Search{
+  outline: 2px solid #d0d0d0;
+  height: 2.5vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 0.5vw;
+  border-radius: 2vw;
+  width: 18vw;
+  gap: 0.7vw;
+  transition: 0.3s ease-in-out;
+}
+.Forms .NavBar .NavLeft .Search:focus-within{
+  outline: 2px solid #000;
+}
+.Forms .NavBar .NavLeft input{
+  background-color: transparent;
+}
+
+.Forms .NavBar .NavLeft input:focus{
+  outline: none;
+}
+.Forms .NavBar .NavMiddle{
+  padding-left: 7vw;
+  display: flex;
+  flex-direction: row;
+  gap: 3.3vw;
+}
+.Forms .NavBar .NavRight{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5vw;
+  align-items: center;
+}
+.Forms .NavBar .NavRight img{
+  width: 2.5vw;
+  height: 2.5vw;
+}
+.icons{
+  font-size: 1.5vw;
+}
+
+.main{
+  height: 100vh;
+}
+
+/* PROCESS */
+/* PROCESS */
+/* PROCESS */
+.ProcessContainer{
+  width: 100%;
+  padding: 1.5vw 4.3vw;
+}
+.Fork{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.4vw;
+}
+.Fork span{
+  font-size: 3.5vw;
+}
+
+.Forms .Fork .liner2{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+
+}
+.Fork .liner2 span{
+  font-size: 1.7vw;
+  line-height:130%;
+}
+.Fork .box{
+  width: 19vw;
+  height: 20vh;
+  border: #a596c4 solid 2px;
+  border-radius: 0.7vw;
+  padding: 1vw 2vw;
+  transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+}
+.Fork .box:hover{
+  border: #44375f solid 2px;
+}
+
+.Fork button{
+  background-color: #44375f;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 1vw;
+  color: #f9f9f9;
+}
+.Fork .icons{
+  font-size: 1.5vw;
 }

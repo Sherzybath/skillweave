@@ -33,7 +33,7 @@ function FilterDialog() {
   };
 
   return (
-    <div className="bg-[#18544c] p-6 rounded-lg w-80 shadow-md inline-block h-0%">
+    <div className="bg-[#18544c] p-6 rounded-lg w-80 shadow-md inline-block  ">
       <h2 className="text-lg font-semibold mb-4 text-[#fff4f0] text-center">Filter Options</h2>
 
       {/* Experience Level Filter */}

@@ -1,10 +1,11 @@
-import React from 'react'
-import homeimage from "../Assets/home-main.svg"
+import React from 'react';
+import homeimage from "../Assets/home-main.svg";
+
 const About = () => {
   return (
-    <div className='About'>
+    <div id="about" className='About'>
       <div className='BigImg'>
-        <img src={homeimage}/>
+        <img src={homeimage} alt="SkillWeave Overview" />
       </div>
       <div className='Desc'>
         <span>skillWeave</span>
@@ -14,7 +15,7 @@ const About = () => {
         <span>Access the top 1% of talent on Upwork, and a full suite of hybrid workforce management tools. This is how innovation works nowASasdkasiduhasiudhasiudhasiudh. Access the top 1% of talent on Upwork, and a full suite of hybrid workforce management tools. This is how innovation works nowASasdkasiduhasiudhasiudhasiudh. Access the top 1% of talent on Upwork, and a full suite of hybrid workforce management tools. This is how innovation works nowASasdkasiduhasiudhasiudhasiudh.</span>
       </div>
     </div>
-  )
+  );
 }
 
-export default About
+export default About;

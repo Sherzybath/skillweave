@@ -48,16 +48,28 @@
 .App .NavBar .NavRight{
   display: flex;
   flex-direction: row;
-  gap: 3vw;
+  gap: 1vw;
 }
 .App .NavBar .NavRight .ColorButton{
-  background-color: #f48b29;
+  background-color: #b3796e;
   padding: 10px 20px;
   border-radius: 1vw;
   text-align: center;
   color: #fdf3e9;
   display: table-cell;
   vertical-align: middle;
+   
+}
+.App .NavBar .NavRight .ColorButton2{
+  background-color: #18544c;
+  padding: 10px 20px;
+  border-radius: 1vw;
+  text-align: center;
+  color: #fdf3e9;
+  display: table-cell;
+  vertical-align: middle;
+  
+   
 }
 /* Home */
 /* Home */

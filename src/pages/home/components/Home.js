@@ -18,7 +18,7 @@ const Home = () => {
         <span>Find great work</span>
         <span>Oppurtunities</span>
         <span>Search for great work blah blah blah blah blah blah blah blah blah blah blah blah</span>
-        <button>Find Talent</button>
+        <Link to="/dashboardF"><button>Find Talent</button> </Link>
       </div>
     </div>
   )

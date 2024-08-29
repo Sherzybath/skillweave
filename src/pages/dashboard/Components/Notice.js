@@ -19,7 +19,7 @@ const BlogPost = ({ title, experience, price, description, tags }) => {
 };
 const NoticeBoard = ({list}) => {
   return (
-    <div className='notices'>
+    <div className='notices2'>
       {list.map((blog, index) => (
         <BlogPost
           key={index}

@@ -921,7 +921,13 @@ input[type="checkbox"]:checked::after {
   height: 27vw;
   border-radius: 1vw;
   color: #1b1b1b;
+  transition: 0.2s ease-in-out;
 }
+
+.post2:hover{
+ 
+}
+
 .post2 .thumbnail{
   width: 20vw;
   height: 32vh;
@@ -984,13 +990,6 @@ input[type="checkbox"]:checked::after {
 
   color: #636363;
   font-size: 1vw;
-}
-.post2 .profile .Reviews span:nth-child(2){
-
-  
-}
-.post2 .star{
-
 }
 .post2 .star path{
   color: #fff1aa;

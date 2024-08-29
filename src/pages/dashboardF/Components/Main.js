@@ -16,7 +16,8 @@ const Main = ({tog}) => {
       numberOfStars: 5,
       numberOfReviews: 1203,
       description: "Professional web development services including front-end and back-end development.",
-      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"]
+      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+      experience: "Advanced"
     },
     {
       thumbnail: "/thumbnails/LeftArm.png",
@@ -28,7 +29,8 @@ const Main = ({tog}) => {
       numberOfStars: 4.8,
       numberOfReviews: 80,
       description: "Creative graphic design solutions for your business, including logos and branding.",
-      skills: ["Photoshop", "Illustrator", "InDesign", "Logo Design", "Branding"]
+      skills: ["Photoshop", "Illustrator", "InDesign", "Logo Design", "Branding"],
+      experience: "Intermediate"
     },
     {
       thumbnail: "/thumbnails/Kotteri.png",
@@ -40,7 +42,8 @@ const Main = ({tog}) => {
       numberOfStars: 4.2,
       numberOfReviews: 200,
       description: "High-quality content writing services for blogs, articles, and websites.",
-      skills: ["SEO Writing", "Blogging", "Copywriting", "Editing", "Research"]
+      skills: ["SEO Writing", "Blogging", "Copywriting", "Editing", "Research"],
+      experience: "Intermediate"
     },
     {
       thumbnail: "/thumbnails/Raviel2.png",
@@ -52,24 +55,30 @@ const Main = ({tog}) => {
       numberOfStars: 4.7,
       numberOfReviews: 95,
       description: "Expert SEO services to improve your website's search engine rankings.",
-      skills: ["SEO", "Keyword Research", "Link Building", "Analytics", "Content Strategy"]
+      skills: ["SEO", "Keyword Research", "Link Building", "Analytics", "Content Strategy"],
+      experience: "Advanced"
     }
     
   ]
   const [searchTerm, setSearchTerm] = useState('');
-  const filteredData = blogSchema.filter((service) =>
-    service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    service.daysDelivery.toString().includes(searchTerm) ||
-    service.pricing.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    service.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    service.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+  const [selectedExperience, setSelectedExperience] = useState([]);
+  const filteredData = blogSchema.filter((service) => {
+    const matchesSearchTerm =
+      service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.daysDelivery.toString().includes(searchTerm) ||
+      service.pricing.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.username.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.skills.some(skill => skill.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesExperience = selectedExperience.length === 0 || selectedExperience.includes(service.experience);
+
+    return matchesSearchTerm && matchesExperience;
+  });
   return (
     <div className='main'>
         <Home toggle={tog}/>
         <TagList onSearch={setSearchTerm} onSearchTerm={searchTerm}/>
-        <List listing={filteredData}/>
+        <List listing={filteredData} sSE={setSelectedExperience} SE={selectedExperience}/>
         <Footer />
     </div>
   )

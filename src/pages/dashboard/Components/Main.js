@@ -72,18 +72,27 @@ const Main = ({tog}) => {
     },
   ];
     const [searchTerm, setSearchTerm] = useState('');
-    const filteredData = blogSchema.filter((blog) =>
-    blog.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.experience.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.price.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    blog.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-  );
+    const [selectedExperience, setSelectedExperience] = useState([]);
+
+
+
+    const filteredData = blogSchema.filter((service) => {
+      const matchesSearchTerm =
+        service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.experience.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.price.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+  
+      const matchesExperience = selectedExperience.length === 0 || selectedExperience.includes(service.experience);
+  
+      return matchesSearchTerm && matchesExperience;
+    });
   return (
     <div className='main'>
         <Home toggle={tog}/>
         <TagList onSearch={setSearchTerm} onSearchTerm={searchTerm}/>
-        <List listing={filteredData}/>
+        <List listing={filteredData} sSE={setSelectedExperience} SE={selectedExperience}/>
         <Footer />
     </div>
   )

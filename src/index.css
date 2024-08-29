@@ -630,7 +630,7 @@ input[type="checkbox"]:checked::after {
 /* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
 /* FFFFFFFFFFFFFFOOOOOOOOOOOOOOOOOORRRRRRRRRRRRRRRMMMMMMMMMMMMMMMSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS */
 .Forms{
-  background-color: #f9f9f9;
+  background-color: #faf3e3;
   min-height: 100vh;
 }
 
@@ -755,3 +755,151 @@ input[type="checkbox"]:checked::after {
 .Fork .icons{
   font-size: 1.5vw;
 }
+
+
+/* Freelancer a */
+/* Freelancer a */
+/* Freelancer a */
+/* Container wrapper to center the content */
+.quiz-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh; /* Full viewport height */
+  background-color: #faf3e3;
+  
+}
+
+.quiz-container {
+  width: 40%; /* Adjusted width */
+  padding: 2rem;
+  background-color: #16413f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  color: #faf3e3;
+}
+
+.quiz-question {
+  font-weight: bold;
+  font-size: 2rem; /* Larger font size */
+  margin-bottom: 1rem;
+  color:#faf3e3;
+}
+
+.quiz-description {
+  font-size: 1.2rem; /* Slightly larger font */
+  color: #faf3e3;
+  margin-bottom: 2rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-around; /* Space evenly distributed */
+  margin-bottom: 2rem;
+  color:#faf3e3
+}
+
+.option {
+  width: 30%; /* Each option takes up 30% of the space */
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #faf3e3;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+  color:#faf3e3;
+}
+
+.option img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 0.5rem;
+  color:#faf3e3
+  
+}
+
+.option.selected {
+  border-color: #faf3e3;
+  background-color: #faf3e3;
+  
+  
+}
+
+ 
+.option p {
+  font-size: 1.2rem; /* Larger font size */
+  color:#faf3e3
+}
+
+.bottom-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%; /* The line and button span the entire width */
+  padding: 1rem;
+  text-align: right;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid #16413f; /* Line touching both ends of the page */
+
+  margin-bottom: 1rem;
+}
+
+.next-button {
+  background-color: #16413f;
+  color: #faf3e3;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 2rem;
+  width: 7%;
+   
+}
+
+.next-button:hover {
+  background-color: #16413f ;
+}
+
+/* Custom styles for the divider */
+.divider {
+  width: 100%;
+  border-top: 1px solid #16413f; /* Replace this with your color */
+  margin-bottom: 1rem;
+}
+
+/* Custom styles for the next button */
+.next-button {
+  background-color: #16413f; /* Replace this with your color */
+  color: #faf3e3; /* Replace this with your color */
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 2rem;
+  width: 7%;
+}
+
+.next-button:hover {
+  background-color: #16413f; /* Replace this with your color */
+}
+
+/* Styles for the bottom section */
+.bottom-section {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+  text-align: right;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+

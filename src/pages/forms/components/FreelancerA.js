@@ -17,7 +17,7 @@ const FreelanceQuiz = ({ onNext }) => {
 
   return (
     <div className="quiz-wrapper">
-      <div className="progress-indicator">
+      <div className='upper-section'><div className="progress-indicator">
         <p className="progress-text">1/3</p> {/* Progress indicator */}
       </div>
       <div className="quiz-container">
@@ -51,10 +51,10 @@ const FreelanceQuiz = ({ onNext }) => {
             }}>Advanced</p>
           </div>
         </div>
-      </div>
+      </div></div>
+      
       
       <div className="bottom-section">
-        <hr className="divider" />
         <button onClick={handleNext} className="next-button">Next</button>
       </div>
     </div>

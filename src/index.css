@@ -720,7 +720,10 @@ input[type="checkbox"]:checked::after {
 /* PROCESS */
 .ProcessContainer{
   width: 100%;
-  padding: 1.5vw 4.3vw;
+  padding: 0vw 4.3vw;
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
 }
 .Fork{
   display: flex;
@@ -778,14 +781,18 @@ input[type="checkbox"]:checked::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   height: 70vh; /* Full viewport height */
   background-color: #faf3e3;
+  gap: 1vw;
+  flex-grow: 1;
   
 }
 
 .quiz-container {
-  width: 40%; /* Adjusted width */
+  display: flex;
+  flex-direction: column;
+  width: 45%; /* Adjusted width */
   padding: 2rem;
   background-color: #16413f;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -846,15 +853,6 @@ input[type="checkbox"]:checked::after {
   color:#faf3e3
 }
 
-.bottom-section {
-  position: absolute;
-  bottom: 0;
-  width: 100%; /* The line and button span the entire width */
-  padding: 1rem;
-  text-align: right;
-  padding-left: 4rem;
-  padding-right: 4rem;
-}
 
 .divider {
   width: 100%;
@@ -906,17 +904,20 @@ input[type="checkbox"]:checked::after {
 }
 
 /* Styles for the bottom section */
-.bottom-section {
-  position: absolute;
-  bottom: 0;
+.bottom-section{
+  border-top: #636363 solid 1px;
+  padding-top: 1vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   width: 100%;
-  padding: 1rem;
-  text-align: right;
-  padding-left: 4rem;
-  padding-right: 4rem;
 }
-
-
+.upper-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
+}
 /* FRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNNCCCCCCCCCCCCEEEEEEEEEEEEEERRRRRRRRRRRR */
 /* FRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNNCCCCCCCCCCCCEEEEEEEEEEEEEERRRRRRRRRRRR */
 /* FRRRRRRRRREEEEEEEEEEEEEEEEEEEEEEEEEEEELLLLLLLLLLLLLLLLLLLLAAAAAAAAAAAAAAAAAAAANNNNNNNNNNNNCCCCCCCCCCCCEEEEEEEEEEEEEERRRRRRRRRRRR */
@@ -1019,11 +1020,97 @@ input[type="checkbox"]:checked::after {
 /* Freelancer A */
 .progress-indicator {
   text-align:left;
-  margin-bottom: 1rem;
 }
 
 .progress-text {
   font-weight: bold;
   font-size: 2rem;
   color: #133b3a; /* Change this color as needed */
+}
+
+
+/* PORTFOLIO DISPLAY */
+/* PORTFOLIO DISPLAY */
+/* PORTFOLIO DISPLAY */
+.Port{
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(97, 97, 97, 0.6);
+  z-index: 999;
+  right: 0;
+}
+.PortDisplay{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 40vw;
+  height: 100vh;
+  background-color: #fff4f4;
+  right: 0;
+  overflow-y: auto;
+}
+.PortNav{
+  background-color: #130035;
+  height: 7vh;
+  width: 100%;
+}
+.PortDetails{
+  
+}
+.PortDetails .Title{
+  font-size: 1.5vw;
+}
+.PortDetails .TopSection{
+  padding: 3vw 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+
+}
+.PortDetails .TopSection .liner{
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  align-items: center;
+}
+.PortDetails .TopSection .liner span{
+  color: #636363;
+  font-weight: 400;
+}
+
+
+.PortDetails .TopSection .liner path{
+  color: #636363;
+}
+
+.PortDetails .DescSection{
+  padding: 3vw 2vw;
+  border-top: 1px solid #9f9f9f;
+}
+
+.PortDetails .DescSection p{
+  font-weight: 400;
+}
+
+.PortDetails .twoSection{
+  border-top: 1px solid #9f9f9f;
+  padding: 3vw 2vw;
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+.twoSection .Left, .twoSection .Right{
+  font-size: 1.3vw;
+  
+}
+.twoSection .Left span, .twoSection .Right span{
+  font-weight: 400;
+}
+
+.twoSection .Left{
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+  align-items: center;
 }

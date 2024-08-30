@@ -7,7 +7,7 @@ const BlogPost = ({ title, experience, price, description, tags }) => {
       <p><strong>Price:</strong> {price}</p>
       <p className='description'>{description}</p>
       <div>
-
+      
         <ul>
           {tags.map((tag, index) => (
             <li key={index}>{tag}</li>

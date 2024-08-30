@@ -1,19 +1,31 @@
-import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {} from '@fortawesome/free-regular-svg-icons';
-import { faXmark } from '@fortawesome/free-solid-svg-icons';
-const Chatbot = ({toggle}) => {
-  return (
-    <div className='Chatbot'>
-        <div className='ChatNav'>
-            <button><FontAwesomeIcon onClick={toggle} className='icons' icon={faXmark}/></button>
-        </div>
-        <div className='ChattingArea'></div>
-        <div className='ChatInput'>
-            <input></input>
-        </div>
-    </div>
-  )
-}
+import React, { useEffect } from 'react';
 
-export default Chatbot
+const VoiceflowChat = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+    
+    script.onload = () => {
+      window.voiceflow.chat.load({
+        verify: { projectID: '66d1909350827ab66132e89a' },
+        url: 'https://general-runtime.voiceflow.com',
+        versionID: 'production',
+      });
+    };
+
+    const firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+
+    // Cleanup script when component unmounts
+    return () => {
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+    };
+  }, []);
+
+  return null; // This component doesn't render any visible content
+};
+
+export default VoiceflowChat;

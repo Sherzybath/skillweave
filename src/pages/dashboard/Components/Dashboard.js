@@ -81,7 +81,7 @@ function Dashboard() {
         experience: "Expert",
         price: "400.00",
         description: `I need a talented UX/UI designer to redesign the interface of an existing mobile app. The app is currently functional, but the design is outdated, and I want to improve the overall user experience. The redesign should focus on making the app more intuitive, visually appealing, and in line with modern design trends. The app is available on both iOS and Android, so the design should be compatible with both platforms.`,
-        tags: ["UX/UI Design", "Mobile App"],
+        tags: ["UI/UX Developer", "Mobile App"],
         username: "user8"
       },
       {

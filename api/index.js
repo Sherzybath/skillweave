@@ -207,6 +207,67 @@ app.get('/jobs', isAuthenticated, (req, res) => {
 });
 
 
+
+// POST /freelance route
+app.post('/freelance', isAuthenticated, (req, res) => {
+  const {
+    title,
+    daysDelivery,
+    pricing,
+    numberOfStars,
+    numberOfReviews,
+    description,
+    skills,
+    experience,
+  } = req.body;
+
+  // Convert skills array to a comma-separated string
+  const skillsStr = skills.join(',');
+  const username = req.session.user.username
+
+  // SQL query to insert a new freelance record
+  const sql = `
+    INSERT INTO freelance (title, daysDelivery, pricing, username, numberOfStars, numberOfReviews, description, skills, experience)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `;
+
+  // Execute the query
+  db.run(
+    sql,
+    [title, daysDelivery, pricing, username, numberOfStars, numberOfReviews, description, skillsStr, experience],
+    function (err) {
+      if (err) {
+        console.error(err.message);
+        return res.status(500).json({ error: 'Failed to insert freelance record.' });
+      }
+      res.status(201).json({ message: 'Freelance record created successfully!', freelanceId: this.lastID });
+    }
+  );
+});
+
+
+
+app.get('/freelance', (req, res) => {
+  const sql = 'SELECT * FROM freelance';
+
+  db.all(sql, [], (err, rows) => {
+    if (err) {
+      console.error(err.message);
+      return res.status(500).json({ error: 'Failed to retrieve freelance records.' });
+    }
+
+    // Map the skills string back to an array of skills
+    const formattedRows = rows.map(row => ({
+      ...row,
+      skills: row.skills.split(',')
+    }));
+
+    res.status(200).json(formattedRows);
+  });
+});
+
+
+
 app.post('/upload', isAuthenticated, upload.fields([{ name: 'image', maxCount: 1 }, { name: 'pdf', maxCount: 1 }]), (req, res) => {
   if (!req.files || !req.files.image || !req.files.pdf) {
     return res.status(400).json({ error: 'Both image and PDF files are required.' });

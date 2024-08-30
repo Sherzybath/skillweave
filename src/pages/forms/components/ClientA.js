@@ -18,20 +18,14 @@ const Title = ({ title, onChange, error }) => {
 };
 
 // Experience Component
-const Experience = ({ onNext }) => {
+const Experience = () => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
   };
 
-  const handleNext = () => {
-    if (selectedOption) {
-      onNext(selectedOption); // Pass the selected experience level to the parent
-    } else {
-      alert('Please select an option.'); // Show alert if no option is selected
-    }
-  };
+  
 
   return (
     <div className="experience-container mb-4">
@@ -104,12 +98,12 @@ const Price = ({ price, onChange }) => {
 };
 
 // ClientA Component
-const ClientA = () => {
+const ClientA = ({onNext}) => {
   const [title, setTitle] = useState('');
   const [experience, setExperience] = useState('');
   const [price, setPrice] = useState('');
   const [titleError, setTitleError] = useState('');
-
+  
   useEffect(() => {
     const wordCount = title.trim().split(/\s+/).length;
     if (wordCount < 2 || wordCount > 20) {
@@ -120,12 +114,12 @@ const ClientA = () => {
   }, [title]);
 
   const handleNext = () => {
-    // Handle the next action here
-    console.log({ title, experience, price });
+      onNext(); 
+    
   };
 
   return (
-    <div className="flex flex-col items-center mt-8 bg-[#faf3e3] p-8 min-h-screen">
+    <div className="flex flex-col items-center  bg-[#faf3e3] min-h-screen">
       {/* Progress Indicator */}
       <p className="font-semibold text-[#133b3a] mb-4 text-3xl">1/2</p>
 

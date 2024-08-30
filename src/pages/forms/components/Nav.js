@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 const Nav = () => {
   return (
     <div className='NavBar'>
         <div className='NavLeft'>
-            <span>SkillWeave</span></div>
+            <span><Link to="/"> SkillWeave</Link></span></div>
         {/* <div className='NavMiddle'>
             <button>About</button>
             <button>FAQ</button>

@@ -41,6 +41,7 @@ function FilterDialog({ selectedExperience, setSelectedExperience }) {
               </label>
             ))}
           </div>
+          
         )}
       </div>
     </div>

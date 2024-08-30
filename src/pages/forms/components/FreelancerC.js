@@ -36,7 +36,7 @@ function FreelancerC() {
   };
 
   return (
-    <div className="flex flex-col items-center p-6 space-y-6 bg-[#faf3e3] max-w-lg mx-auto">
+    <div className="flex flex-col items-center  space-y-6 bg-[#faf3e3] max-w-lg mx-auto">
       {/* Progress Indicator */}
       <div className="text-[#133b3a] text-3xl font-bold ">3/3</div>
 

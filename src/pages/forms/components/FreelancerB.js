@@ -71,7 +71,7 @@ function FreelancerB({onNext}) {
   };
 
   return  (
-    <div className="flex flex-col items-center p-6 space-y-6 bg-[#faf3e3]">
+    <div className="flex flex-col items-center  space-y-6 bg-[#faf3e3]">
       {/* Progress Indicator */}
       <div className="progress-indicator flex justify-center items-center mb-0">
         <p className="progress-text text-[#133b3a] text-lg font-semibold">2/3</p>
@@ -198,16 +198,12 @@ function FreelancerB({onNext}) {
             )}
           </div>
         </div>
-        <div className="bottom-section mt-6 flex justify-center">
-          <hr className="divider w-full border-gray-300" />
-          <button onClick={handleNext} className="mt-4 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700">
-            Next
-          </button>  
-          </div>
+        
       </div>
       {/* Progress Message */}
-      <div className="mt-6 text-3xl text-[#133b3a] font-semibold ">
-        Just 1 more step!
+      <div className="bottom-section">
+    
+        <button onClick={handleNext} className="next-button">Next</button>
       </div>
     </div>
   );

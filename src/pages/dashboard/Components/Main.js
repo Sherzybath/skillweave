@@ -4,7 +4,7 @@ import TagList from './TagList'
 import List from './List'
 import Footer from './Footer'
 import { useState } from 'react'
-const Main = ({tog, Schema}) => {
+const Main = ({tog, Schema, display}) => {
   
   
     const [searchTerm, setSearchTerm] = useState('');
@@ -16,7 +16,6 @@ const Main = ({tog, Schema}) => {
       const matchesSearchTerm =
         service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
         service.experience.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        service.price.toLowerCase().includes(searchTerm.toLowerCase()) ||
         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
         service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
   
@@ -28,7 +27,7 @@ const Main = ({tog, Schema}) => {
     <div className='main'>
         <Home toggle={tog}/>
         <TagList onSearch={setSearchTerm} onSearchTerm={searchTerm}/>
-        <List listing={filteredData} sSE={setSelectedExperience} SE={selectedExperience}/>
+        <List listing={filteredData} sSE={setSelectedExperience} SE={selectedExperience} select={display}/>
         <Footer />
     </div>
   )

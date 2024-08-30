@@ -1,30 +1,54 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock } from '@fortawesome/free-regular-svg-icons';
-import { faLocationDot} from '@fortawesome/free-solid-svg-icons';
-function Portfolio() {
+import { faClock, faStar } from '@fortawesome/free-regular-svg-icons';
+import {faDollar, faLocationDot, faXmark} from '@fortawesome/free-solid-svg-icons';
+const Tags = ({tag}) => {
+    return (
+        <div className="DisplayTag">
+            {tag}
+        </div>
+    );
+  };
+
+function Portfolio({list, toggle}) {
   return (
     <div className='Port'>
         <div className='PortDisplay'>
-            <div className='PortNav'></div>
+            <div className='PortNav'>
+                <button onClick={toggle}><FontAwesomeIcon icon={faXmark} /></button>
+                <span>{list.username}</span>
+            </div>
+
             <div className='PortDetails'>
                 <div className='TopSection'>
-                    <span className='Title'>Web Development Projects, Minimalistic Designs</span>
+                    <span className='Title'>{list.title}</span>
                     <div className='liner'>
                         <span >posted 5 days ago</span> 
-                        <span><FontAwesomeIcon icon={faLocationDot}/>  India</span>
+                        
                     </div>
                     
                 </div>
                 <div className='DescSection'>
-                    <p> I am launching a new product and need a digital marketing specialist to create and execute a marketing strategy. The strategy should include social media marketing, email campaigns, and content marketing to generate buzz and drive sales. I am looking for someone with experience in launching products online and can provide measurable results. Knowledge of SEO and PPC campaigns is a plus.</p>
+                    <p>{list.description}</p>
                     
                 </div>
                 <div className='twoSection'>
-                    <div className='Left'>
+                    {/* <div className='DumbDiv'>
                         <FontAwesomeIcon icon={faClock}/><span>30 days</span>
+                    </div> */}
+                    <div className='DumbDiv'><span><FontAwesomeIcon icon={faLocationDot}/>  India</span></div>
+                    
+                    <div className='DumbDiv'>
+                    <FontAwesomeIcon icon={faDollar}/><span>{list.price}</span>
                     </div>
-                    <div className='Right'></div>
+                    <div className='DumbDiv'>
+                       <FontAwesomeIcon icon={faStar} /> <span>{list.experience}</span>
+                    </div>
+                </div>
+                <div className='TagSection'>
+                    {list.tags.map((tag, index) => (
+                        <Tags key={index} tag={tag} />
+                    ))}
                 </div>
             </div>
         </div>

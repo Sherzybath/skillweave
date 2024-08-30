@@ -4,9 +4,9 @@ import Sherzy from '../Assets/SherzyChibi.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock} from '@fortawesome/free-regular-svg-icons';
 import { faMagnifyingGlass, faStar} from '@fortawesome/free-solid-svg-icons';
-const BlogPost = ({ thumbnail, title, days, price, username , stars, reviews}) => {
+const BlogPost = ({ thumbnail, title, days, price, username , stars, reviews, onClick}) => {
   return (
-    <div className="post2">
+    <div className="post2" onClick={onClick}>
       <img className='thumbnail' src={thumbnail}/>
       <div className='basic'>
         <span className='description'>{title}</span>
@@ -25,7 +25,7 @@ const BlogPost = ({ thumbnail, title, days, price, username , stars, reviews}) =
     </div>
   );
 };
-const NoticeBoard = ({list}) => {
+const NoticeBoard = ({list, display}) => {
   return (
     <div className='notices2'>
       {list.map((blog, index) => (
@@ -39,6 +39,7 @@ const NoticeBoard = ({list}) => {
           username={blog.username}
           stars={blog.numberOfStars}
           reviews={blog.numberOfReviews}
+          onClick={() => display(blog)}
         />
       ))}
 

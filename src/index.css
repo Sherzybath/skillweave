@@ -610,10 +610,17 @@ input[type="checkbox"]:checked::after {
   background-color: transparent;
   transition: 0.07s ease-in-out;
   border-top: 1px solid #1b1b1b;
+  cursor: pointer;
 }
 .post:hover{
   background-color: #aac7c6;
+
 }
+
+.post:hover h2{
+  text-decoration: underline;
+}
+
 .post h2{
   font-size: 1.7vw;
   color: #1b1b1b;
@@ -1054,10 +1061,58 @@ input[type="checkbox"]:checked::after {
   background-color: #130035;
   height: 7vh;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3vw 2vw;
+  justify-content: space-between;
+  font-size: 2vw;
 }
-.PortDetails{
+
+.PortNav div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2vw;
+}
+.PortNav img{
+  width: 3vw;
+  height: 3vw;
   
 }
+
+.PortNav path{
+  color: #fff4f4; 
+}
+
+.PortNav button{
+  width: 2.5vw;
+  height: 2.5vw;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-radius: 2vw;
+  transition: 0.3s ease-in-out;
+
+}
+
+.PortNav button:hover{
+  background-color: #fff4f4;
+}
+.PortNav button:hover path{
+  transition: 0.2s ease-in-out;
+}
+
+.PortNav button:hover path{
+  color: #130035;
+}
+
+.PortNav span{
+  color: #fff4f4;
+  font-size: 2vw;
+}
+
 .PortDetails .Title{
   font-size: 1.5vw;
 }
@@ -1098,19 +1153,54 @@ input[type="checkbox"]:checked::after {
   padding: 3vw 2vw;
   display: flex;
   flex-direction: row;
-  gap: 1vw;
+  gap: 6vw;
 }
-.twoSection .Left, .twoSection .Right{
-  font-size: 1.3vw;
+.twoSection .Left, .twoSection .Right , .twoSection .Middle{
+  font-size: 1.2vw;
   
 }
-.twoSection .Left span, .twoSection .Right span{
-  font-weight: 400;
+.twoSection .Left span, .twoSection .Right span, .twoSection .Middle span{
+  font-weight: 600;
+  font-size:  1vw;
 }
 
-.twoSection .Left{
+.twoSection .DumbDiv{
+  display: flex;
+  flex-direction: row;
+  gap: 0.4vw;
+  align-items: center;
+}
+
+
+.TagSection{
+  border-bottom: 1px solid #9f9f9f;
+  padding: 3vw 2vw;
+  border-top: 1px solid #9f9f9f;
   display: flex;
   flex-direction: row;
   gap: 1vw;
-  align-items: center;
+  flex-wrap: wrap; 
+}
+.DisplayTag {
+  display: inline-block;
+  background-color: #130035;
+  color: #fff4f4;
+  padding: 0.5vw 1vw;
+  border-radius: 1vw;
+  
+}
+
+
+
+/* THUMBNAIL */
+/* THUMBNAIL */
+/* THUMBNAIL */
+.PortDetails .thumbnailSection{
+  border-top: 1px solid #9f9f9f;
+  padding: 3vw 2vw;
+}
+.thumbnailSection img{
+  width: 40vw;
+  height: 20vw;
+  object-fit: cover;
 }

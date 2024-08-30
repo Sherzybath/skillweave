@@ -1203,4 +1203,5 @@ input[type="checkbox"]:checked::after {
   width: 40vw;
   height: 20vw;
   object-fit: cover;
+  align-items: center;
 }

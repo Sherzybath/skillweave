@@ -99,19 +99,29 @@ function Footer() {
           <div className="flex justify-between items-center text-[#291747]">
             {/* Left Side */}
             <div>
-              <h2 className="font-bold text-lg">Skill-Weave</h2>
-              <span>© Skill-Weave International Ltd. 2024</span>
+              <h2 className="font-bold text-lg">SkillWeave</h2>
+              <span>© SkillWeave International Ltd. 2024</span>
             </div>
 
-            {/* Right Side */}
-            <div className="flex space-x-6">
+             {/* Right Side */}
+             <div className="flex space-x-6">
               {/* Social Media Icons */}
               <div className="flex space-x-4">
-                <FaTwitter className="w-6 h-6" />
-                <FaYoutube className="w-6 h-6" />
-                <FaLinkedin className="w-6 h-6" />
-                <FaPinterest className="w-6 h-6" />
-                <FaInstagram className="w-6 h-6" />
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  <FaTwitter className="w-6 h-6" />
+                </a>
+                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+                  <FaYoutube className="w-6 h-6" />
+                </a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                  <FaLinkedin className="w-6 h-6" />
+                </a>
+                <a href="https://www.pinterest.com" target="_blank" rel="noopener noreferrer">
+                  <FaPinterest className="w-6 h-6" />
+                </a>
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+                  <FaInstagram className="w-6 h-6" />
+                </a>
               </div>
 
               {/* Language Selector */}

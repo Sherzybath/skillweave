@@ -1,31 +1,28 @@
-import React, { useEffect } from 'react';
+import { useEffect } from "react";
 
 const VoiceflowChat = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
-    
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://cdn.voiceflow.com/widget/bundle.mjs";
+
     script.onload = () => {
       window.voiceflow.chat.load({
-        verify: { projectID: '66d1909350827ab66132e89a' },
-        url: 'https://general-runtime.voiceflow.com',
-        versionID: 'production',
+        verify: { projectID: "66d1909350827ab66132e89a" },
+        url: "https://general-runtime.voiceflow.com",
+        versionID: "production",
       });
     };
 
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(script, firstScriptTag);
+    document.body.appendChild(script);
 
-    // Cleanup script when component unmounts
+    // Cleanup function to remove the script if the component unmounts
     return () => {
-      if (script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
+      document.body.removeChild(script);
     };
   }, []);
 
-  return null; // This component doesn't render any visible content
+  return null;
 };
 
 export default VoiceflowChat;

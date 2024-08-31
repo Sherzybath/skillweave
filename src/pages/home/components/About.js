@@ -8,7 +8,7 @@ const About = () => {
         <img src={homeimage} alt="SkillWeave Overview" />
       </div>
       <div className='Desc'>
-        <span>skillWeave</span>
+        <span>SkillWeave</span>
         <span>About us</span>
         <span>and why </span>
         <span>we are better</span>

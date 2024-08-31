@@ -7,9 +7,13 @@ const TagList = ({onSearch , onSearchTerm}) => {
     <div className='TagList'>
         <div className='ManualSearch'>
         <FontAwesomeIcon icon={faMagnifyingGlass} className='icons'/>
-        <input placeholder='Search' value={onSearchTerm}
-          onChange={(e) => onSearch(e.target.value)}></input>
-        </div>
+        <input
+          id="searchInput" // Adding the id here
+          placeholder='Search'
+          value={onSearchTerm}
+          onChange={(e) => onSearch(e.target.value)}
+        />
+      </div>
       <span>Jobs</span>
       <div className='line'></div>
 

@@ -2,7 +2,7 @@ import Main from "./Main";
 import Nav from "./Nav"
 import SignUp from "./SignUp";
 import Login from "./Login"
-
+import { useState } from "react";
 function changeZIndex(boxNumber) {
   var box1 = document.getElementById("signContainer");
   var box2 = document.getElementById("loginContainer");
@@ -32,10 +32,21 @@ function changeZIndex(boxNumber) {
   }
 }
 function Homepage() {
+  const [username, setUsername] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [password, setPassword] = useState('');
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log({
+      username,
+      emailAddress,
+      password,
+    });
+  };
   return (
     <div className='homepage'>
         <div className='App'>
-            <SignUp pare={changeZIndex}/>
+            <SignUp pare={changeZIndex} username={setUsername} email={setEmailAddress} password={setPassword} submit={handleSubmit}/>
             <Login pare={changeZIndex} />
             <Nav pare={changeZIndex}/>
             <Main />

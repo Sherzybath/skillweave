@@ -10,6 +10,9 @@
   font-family: grotesk;
   src: url(../public/Fonts/Grotesk/SpaceGrotesk-VariableFont_wght.ttf);
 }
+.font-apercu {
+  font-family: 'Apercu', sans-serif;
+}
 
 .Main{
   display: flex;
@@ -40,7 +43,6 @@
 /* Nav */
 /* Nav */
 /* Nav */
-
 .App .NavBar{
   display: flex;
   flex-direction: row;
@@ -54,44 +56,49 @@
   width: 100%;
   z-index: 1;
 }
+
 .App .NavBar .NavLeft{
   display: flex;
   flex-direction: column;
   justify-content: center;
   font-size: 1.5vw;
 }
+
+.App .NavBar .NavLeft a {
+  font-family: 'Apercu', sans-serif;
+}
+
 .App .NavBar .NavMiddle{
   padding-left: 7vw;
   display: flex;
   flex-direction: row;
   gap: 3.3vw;
 }
+
 .App .NavBar .NavRight{
   display: flex;
   flex-direction: row;
   gap: 1vw;
 }
-.App .NavBar .NavRight .ColorButton{
-  background-color: #b3796e;
-  padding: 10px 20px;
-  border-radius: 1vw;
-  text-align: center;
-  color: #fdf3e9;
-  display: table-cell;
-  vertical-align: middle;
-   
-}
+
+.App .NavBar .NavRight .ColorButton,
 .App .NavBar .NavRight .ColorButton2{
-  background-color: #18544c;
+  background-color: #130035; /* Button background color */
   padding: 10px 20px;
   border-radius: 1vw;
   text-align: center;
-  color: #fdf3e9;
+  color: #fdf3e9; /* Button text color */
   display: table-cell;
   vertical-align: middle;
-  
-   
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
+
+.App .NavBar .NavRight .ColorButton:hover,
+.App .NavBar .NavRight .ColorButton2:hover{
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+
 /* Home */
 /* Home */
 /* Home */
@@ -310,7 +317,7 @@ form div h3 {
 /* About */
 /* About */
 /* About */
-.About{
+/* .About{
   background-color: #13544e;
   padding: 3vw 4.3vw;
   color: #edebf0;
@@ -358,7 +365,7 @@ form div h3 {
   height: 30vw;
   background-color: #13544e;
   border-radius: 3vw;
-}
+} */
 /* FAQ */
 /* FAQ */
 /* FAQ */

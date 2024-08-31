@@ -11,7 +11,7 @@ const Nav = ({ pare }) => {
   return (
     <div className='fixed top-0 left-0 w-full bg-[#fff4f0] p-[1.5vw_4.3vw] flex items-center justify-between min-h-[9.5vh] z-10'>
       <div className='text-[1.5vw] flex flex-col justify-center'>
-        <a href="/" >SkillWeave</a>
+        <a href="/" className='font-apercu'>SkillWeave</a>
       </div>
       <div className='flex gap-[3.3vw] pl-[7vw]'>
         <a href="#about"  >About</a>

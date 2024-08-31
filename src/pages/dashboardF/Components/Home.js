@@ -2,6 +2,18 @@ import React from 'react';
 import AiImage from '../Assets/wfh.jpeg';
 
 const Home = ({toggle}) => {
+
+  const scrollToSearchBar = () => {
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      searchInput.focus(); // Ensures the cursor is placed in the input field
+      window.scrollBy(0, -20); // Adjusts the scroll to keep the input at the top of the view
+    }
+  };
+
+
+
   return (
     <div className=' h-[88vh] flex flex-row justify-between items-center bg-[#fff4f0]'>
       {/* Left Sectionffsfsdf */}
@@ -11,9 +23,13 @@ const Home = ({toggle}) => {
         <span className='mt-[1vw] text-[0.8vw] font-medium text-[#555]'>
         Explore a wide range of freelancers and handpick the one that matches your requirements. Take control and choose the best fit manually.
         </span>
-        <button className='mt-[2vw] bg-[#f675b3] w-[12vw] h-[3vw] text-[#ffff] rounded-full shadow-lg hover:bg-[#f675b3] transition-all duration-300'>
+        <button
+        onClick={scrollToSearchBar} 
+         className='mt-[2vw] bg-[#f675b3] w-[12vw] h-[3vw] text-[#ffff]  rounded-full shadow-lg hover:bg-[#f675b3] transition-all duration-300'>
           Browse Freelancers
         </button>
+        
+         
       </div>
 
       {/* Image Section */}

@@ -23,11 +23,11 @@ const Nav = ({ pare }) => {
         <img
           src={profileImage}
           alt="Profile"
-          className='w-[2.5rem] h-[2.5rem] rounded-full cursor-pointer mr-20'
+          className='w-[2.5rem] h-[2.5rem] rounded-full cursor-pointer mr-20 '
           onClick={toggleDropdown}
         />
         {showDropdown && (
-          <div className='absolute right-3 mt-2 bg-[#13544e] text-white rounded-md shadow-lg w-[12rem]'>
+          <div className='absolute  right-3 mt-2 bg-[#13544e] text-white rounded-md shadow-lg w-[12rem]'>
             <div className='relative'>
               <div className='absolute top-[-0.5rem]  right-20 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-black'></div>
             </div>

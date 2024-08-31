@@ -11,7 +11,7 @@ const Nav = ({ pare }) => {
   return (
     <div className='fixed top-0 left-0 w-full bg-[#fff4f0] p-[1.5vw_4.3vw] flex items-center justify-between min-h-[9.5vh] z-10'>
       <div className='text-[1.5vw] flex flex-col justify-center'>
-        <a href="/" >SkillWeave</a>
+        <a href="/" className='font-apercu'>SkillWeave</a>
       </div>
       <div className='flex gap-[3.3vw] pl-[7vw]'>
         <a href="#about"  >About</a>
@@ -31,8 +31,8 @@ const Nav = ({ pare }) => {
             <div className='relative'>
               <div className='absolute top-[-0.5rem]  right-20 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-black'></div>
             </div>
-            <a href="#portfolio" className='block text-center px-4 py-2 text-[#faf3e3] hover:bg-[#b56b61] rounded-md' onClick={() => setShowDropdown(false)}>Update Portfolio</a>
-            <a href="#jobs" className='block px-4 py-2 text-center text-[#faf3e3] hover:bg-[#b56b61] rounded-md' onClick={() => setShowDropdown(false)}>Update Jobs</a>
+            <a href="#portfolio" className='block text-center px-4 py-2 text-[#faf3e3] hover:bg-[#faf3e3] hover:text-[#13544e] rounded-md' onClick={() => setShowDropdown(false)}>Update Portfolio</a>
+            <a href="#jobs" className='block px-4 py-2 text-center text-[#faf3e3] hover:bg-[#faf3e3] hover:text-[#13544e] rounded-md' onClick={() => setShowDropdown(false)}>Update Jobs</a>
             <button
               onClick={() => { setShowDropdown(false); pare(0); }}
               className='block w-full text-left px-4 py-2 text-center text-[#faf3e3] hover:bg-red-800 rounded-md'

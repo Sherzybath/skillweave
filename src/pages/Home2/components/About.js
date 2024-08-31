@@ -12,8 +12,8 @@ const About = () => {
         />
       </div>
       <div className='Desc flex flex-col justify-center max-w-[60vw]'>
-        <span className='text-[1.6vw] text-[#91e6b3]'>SkillWeave</span>
-        <span className='mt-[1vw] text-[3.4vw] leading-none  text-[#e6e6e6] transition-transform transform hover:scale-105'>About Us</span>
+        {/* <span className='text-[1.6vw] text-[#91e6b3]'>SkillWeave</span> */}
+        <span className='mt-[1vw] text-[3.4vw] leading-none  text-[#e6e6e6] transition-transform transform hover:scale-105 mb-3'>About Us</span>
         <span className='mt-[0.4vw] text-[3.4vw] text-[#91e6b3] leading-none'>and why</span>
         <span className='mt-[0.4vw] text-[3.4vw] text-[#91e6b3] leading-none'>we are better</span>
         

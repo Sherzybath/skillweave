@@ -1,6 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 function PaymentSuccessPage() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2000); // 2 seconds loading time
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="text-center">
+          <div className="loader mt-3"></div>
+          <p>Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 py-10">
       <div className="bg-white p-8 rounded-lg shadow-lg max-w-4xl w-full">
@@ -17,7 +39,7 @@ function PaymentSuccessPage() {
             <strong>Paid To:</strong> Sherzybath
           </p>
           <p className="text-gray-700 mb-4">
-            <strong>From:</strong> Harsh Vardhan
+            <strong>From:</strong> Sid
           </p>
         </div>
 

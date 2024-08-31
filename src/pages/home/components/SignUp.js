@@ -1,12 +1,14 @@
 import React from "react";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faCircleQuestion, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 const SignUp = ({ pare, username, email, password, submit}) => {
   return (
     <div className="box" id="signContainer">
       <div className="myDiv" id="signUpForm" >
         <div className="tt">
           <button className="divClose" onClick={() => pare(3)}>
-            <i className="material-symbols-outlined"> close </i>
+            <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
         <form id="form1" className="forms" method="post" onSubmit={submit}>

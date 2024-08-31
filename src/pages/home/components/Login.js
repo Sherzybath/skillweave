@@ -1,25 +1,29 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell, faCircleQuestion, faMessage } from '@fortawesome/free-regular-svg-icons';
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-const Login = ({ pare }) => {
+const Login = ({ pare, email, password, submit}) => {
   return (
     <div className="box" id="loginContainer">
       <div className="myDiv" id="loginForm">
         <div className="tt">
           <button className="divClose" onClick={() => pare(4)}>
-            <i className="material-symbols-outlined"> close </i>
+          <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
-        <form id="form2" className="forms" action="/rilli_Login?" method="post">
+        <form id="form2" className="forms" method="post" onSubmit={submit}>
           <div className="heading">
             <span>Login to skillWeave</span>
           </div>
           <div className="enroll">
-            <h3>Username</h3>
+            <h3>Email</h3>
             <div className="spacer"></div>
             <input
               type="text"
               name="enroll"
               placeholder="Sherzybath"
+              onChange={(e) => email(e.target.value)}
               required
             />
           </div>
@@ -30,6 +34,7 @@ const Login = ({ pare }) => {
               type="password"
               name="password"
               placeholder="Password"
+              onChange={(e) => password(e.target.value)}
               required
             />
           </div>

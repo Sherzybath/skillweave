@@ -32,7 +32,7 @@ const Home = ({ toggle }) => {
           onClick={scrollToSearchBar}
           className="mt-[2vw] bg-[#f675b3] w-[12vw] h-[3vw] text-[#ffff] rounded-full shadow-lg hover:bg-[#f675b3] transition-all duration-300 hover:scale-[1.15]"
         >
-          Browse Freelancers
+          Browse Gigs
         </button>
       </div>
 
@@ -61,7 +61,7 @@ const Home = ({ toggle }) => {
           onClick={toggle}
           className="mt-[2vw] bg-[#554ef3] w-[12vw] h-[3vw] text-[#fff] rounded-full shadow-lg hover:bg-[#554ef3] transition-all duration-300  hover:scale-[1.15]"
         >
-          Use AI to Find Projects
+          Use AI to Find Gigs
         </button>
       </div>
     </div>

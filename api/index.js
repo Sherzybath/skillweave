@@ -163,17 +163,16 @@ app.get('/dashboard', isAuthenticated, (req, res) => {
 
 
 // POST request to /jobs
-app.post('/jobs', isAuthenticated, (req, res) => {
-  const { title, experience, price, description, tags } = req.body;
-  const userId = req.session.user.id;
+app.post('/jobs', (req, res) => {
+  const { title, experience, price, description, tags, user } = req.body;
   if (!title || !experience || !price) {
       return res.status(400).json({ error: 'Title, experience, and price are required.' });
   }
 
-  const sql = `INSERT INTO jobs (title, experience, price, description, tags, user_id) VALUES (?, ?, ?, ?, ?, ?)`;
+  const sql = `INSERT INTO jobs (title, experience, price, description, tags, user) VALUES (?, ?, ?, ?, ?, ?)`;
   const tagsString = tags.join(','); // Convert tags array to comma-separated string
 
-  db.run(sql, [title, experience, price, description, tagsString, userId], function(err) {
+  db.run(sql, [title, experience, price, description, tagsString, user], function(err) {
       if (err) {
           return res.status(500).json({ error: err.message });
       }

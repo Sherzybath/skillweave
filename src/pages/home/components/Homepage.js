@@ -32,9 +32,9 @@ function changeZIndex(boxNumber) {
     box2.style.opacity = 0;
   }
 }
-function Homepage() {
+function Homepage({username, setUsername}) {
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
+  
   const [email, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);

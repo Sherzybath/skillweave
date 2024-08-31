@@ -1,11 +1,11 @@
 import Process from "./Process";
 import Nav from "./Nav";
  
-function Forms() {
+function Forms({username}) {
   return (
     <div className='Forms'>
         <Nav />
-        <Process />
+        <Process username={username}/>
     </div>
   )
 }

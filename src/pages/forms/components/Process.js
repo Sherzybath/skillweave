@@ -6,7 +6,7 @@ import FreelancerA from "./FreelancerA"
 import FreelancerB from "./FreelancerB";
 import FreelancerC from "./FreelancerC"
 import { Link, useNavigate } from "react-router-dom";
-function Process() {
+function Process({username}) {
     const [currentComponent, setCurrentComponent] = useState('Fork');
 
     const handleSubmit = (option) => {
@@ -48,7 +48,14 @@ function Process() {
 
     const handleJobSubmit = async (event) => {
       event.preventDefault();
-  
+      // console.log({
+      //   title,
+      //   experience,
+      //   price,
+      //   selectedSkills,
+      //   description
+
+      // })
       try {
         const response = await fetch('http://localhost:8080/jobs', {
           method: 'POST',
@@ -56,6 +63,7 @@ function Process() {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
+            user: username,
             title: title,
             experience: experience,
             price: price,

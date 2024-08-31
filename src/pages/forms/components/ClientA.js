@@ -18,11 +18,12 @@ const Title = ({ title, onChange, error }) => {
 };
 
 // Experience Component
-const Experience = () => {
+const Experience = ({onNext}) => {
   const [selectedOption, setSelectedOption] = useState('');
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);
+    onNext(option)
   };
 
   

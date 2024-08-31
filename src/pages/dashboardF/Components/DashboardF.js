@@ -2,13 +2,14 @@ import Nav from "./Nav";
 import Main from "./Main";
 import Chatbot from "./Chatbot";
 import MainCont from "./MainCont";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Portfolio from "./Portfolio";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 function DashboardF() {
   const [showComponent, setShowComponent] = useState(false);
   const [selectedPost, setSelectedPost] = useState(null);
+  // const [blogSchema, setFreelancers] = useState([])
   const toggleComponent = () => {
     setShowComponent((prevState) => !prevState);
   };
@@ -24,7 +25,7 @@ function DashboardF() {
       numberOfReviews: 1203,
       description:
         "With 9 years of design experience at McKinsey & Company and as a top-rated freelancer in Upwork with a 98% job success rate from 2,500+ projects, I would be glad to provide my view on the design approach and what could be optimal to bring the desired results to the requirement. Content engagement or business analytics are advanced agendas. I will be engaging with just the design aspect of the project. It would be great to have a brief outline of your requirement before we get started. After the consultation, I'll send you a detailed summary of my recommendations so that you can implement them yourself, or, I can provide a quote to take care of everything for you",
-      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js"],
+      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Web Development"],
       experience: "Advanced",
     },
     {
@@ -83,14 +84,23 @@ function DashboardF() {
       experience: "Advanced",
     },
   ];
-  // const setclose=()=>{
-  //     <motion.aside
-  //       initial={{ x: "100%" }} // Start off-screen to the left
-  //       animate={{ x: list ? 0 : "100%" }} // Animate to on-screen or off-screen
-  //       transition={{ type: "spring", stiffness: 90, damping: 40 }}
-  //     ></motion.aside>
-  //   setSelectedPost(null);
-  // }
+
+  // useEffect(() => {
+  //   const fetchFreelancers = async () => {
+  //     try {
+  //       const response = await fetch('http://localhost:8080/freelance');
+  //       if (!response.ok) {
+  //         throw new Error('Network response was not ok');
+  //       }
+  //       const data = await response.json();
+  //       setFreelancers(data);
+  //     } catch (error) {
+  //       alert(error.message);
+  //     }
+  //   };
+
+  //   fetchFreelancers();
+  // }, []);
   return (
     <div className="Dashboard">
       <MainCont

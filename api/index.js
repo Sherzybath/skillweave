@@ -185,7 +185,7 @@ app.post('/jobs', (req, res) => {
 
 
 // GET endpoint to retrieve all jobs
-app.get('/jobs', isAuthenticated, (req, res) => {
+app.get('/jobs', (req, res) => {
   const sql = `SELECT * FROM jobs`;
   
   db.all(sql, [], (err, rows) => {
@@ -210,7 +210,7 @@ app.get('/jobs', isAuthenticated, (req, res) => {
 
 
 // POST /freelance route
-app.post('/freelance', isAuthenticated, (req, res) => {
+app.post('/freelance', (req, res) => {
   const {
     title,
     daysDelivery,
@@ -220,11 +220,11 @@ app.post('/freelance', isAuthenticated, (req, res) => {
     description,
     skills,
     experience,
+    username
   } = req.body;
 
   // Convert skills array to a comma-separated string
   const skillsStr = skills.join(',');
-  const username = req.session.user.username
 
   // SQL query to insert a new freelance record
   const sql = `

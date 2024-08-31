@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 
-function FreelancerC() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [duration, setDuration] = useState('');
-  const [skills, setSkills] = useState([]);
+function FreelancerC({title, setTitle, description, setDescription, price, setPrice, duration, setDuration, onSubmit, skills, setSkills}) {
+  // const [title, setTitle] = useState('');
+  // const [description, setDescription] = useState('');
+  // const [price, setPrice] = useState('');
+  // const [duration, setDuration] = useState('');
+  // const [skills, setSkills] = useState([]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [errors, setErrors] = useState({});
 
@@ -58,14 +58,14 @@ function FreelancerC() {
     return Object.keys(formErrors).length === 0;
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
-      // Form submission logic goes here, e.g., send data to server
-      console.log('Form submitted:', { title, description, price, duration, skills });
-    } else {
-      console.log('Form has errors.');
-    }
-  };
+  // const handleSubmit = () => {
+  //   if (validateForm()) {
+  //     // Form submission logic goes here, e.g., send data to server
+  //     console.log('Form submitted:', { title, description, price, duration, skills });
+  //   } else {
+  //     console.log('Form has errors.');
+  //   }
+  // };
 
   return (
     <div className="flex flex-col items-center space-y-6 bg-[#faf3e3] max-w-lg mx-auto">
@@ -167,7 +167,7 @@ function FreelancerC() {
       {/* Submit Button */}
       <button
         className="bg-[#133b3a] text-2xl py-2 px-4 rounded-md mt-4 text-[#faf3e3]"
-        onClick={handleSubmit}
+        onClick={onSubmit}
       >
         Submit
       </button>

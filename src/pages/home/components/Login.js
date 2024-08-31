@@ -17,7 +17,7 @@ const Login = ({ pare, email, password, submit}) => {
             <span>Login to skillWeave</span>
           </div>
           <div className="enroll">
-            <h3>Email</h3>
+            <h3>Username</h3>
             <div className="spacer"></div>
             <input
               type="text"
@@ -46,7 +46,7 @@ const Login = ({ pare, email, password, submit}) => {
           <h5>Want to register?</h5>
           <div className="spacer"></div>
           <button onClick={() => pare(6)} className="redirect" onclick="changeZIndex(6)">
-            <u>Sign in</u>
+            <u>Login</u>
           </button>
         </div>
       </div>

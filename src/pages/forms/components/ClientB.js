@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { FaFilePdf } from 'react-icons/fa';
 import { HiChevronUp, HiChevronDown } from 'react-icons/hi';
 
-function ClientB() {
-  const [selectedSkills, setSelectedSkills] = useState([]);
-  const [description, setDescription] = useState('');
+function ClientB({onSubmit, selectedSkills, setSelectedSkills, description, setDescription}) {
+  
   const [isSkillsOpen, setIsSkillsOpen] = useState(true); // Open by default
 
   // Handle Skills selection
@@ -90,6 +89,7 @@ function ClientB() {
         <button
           type="submit"
           className="mt-4 px-6 py-2 text-2xl bg-[#16413f] text-white rounded-md shadow-sm hover:bg-[#18544c]"
+          onClick={onSubmit}
         >
           Submit
         </button>

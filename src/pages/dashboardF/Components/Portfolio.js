@@ -23,7 +23,7 @@ function Portfolio({ list, toggle }) {
         <motion.aside
           initial={{ x: "100%" }}
           animate={{ x: list ? 0 : "100%" }}
-          transition={{ type: "spring", stiffness: 100, damping: 40 }}
+          transition={{ type: "spring", stiffness: 150, damping: 40 }}
         >
           <div className="PortDisplay ">
             <div className="PortNav">

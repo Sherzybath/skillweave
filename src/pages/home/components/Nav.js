@@ -14,7 +14,7 @@ const Nav = ({ pare }) => {
       </div>
       <div className='NavRight'>
         <button onClick={() => pare(1)}className='ColorButton2'>Sign Up</button>
-        <button onClick={() => pare(2)} className='ColorButton'>Sign in</button>
+        <button onClick={() => pare(2)} className='ColorButton'>Login</button>
       </div>
     </div>
   );

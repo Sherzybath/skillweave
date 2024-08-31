@@ -5,10 +5,6 @@ import { faUser } from '@fortawesome/free-regular-svg-icons';
 
 function Fork({onSubmit}) {
     const [selectedOption, setSelectedOption] = useState('');
-    const handleOptionChange = (event) => {
-    setSelectedOption(event.target.value);
-    };
-
     const handleSubmit = () => {
         if (selectedOption) {
         onSubmit(selectedOption);
@@ -19,6 +15,13 @@ function Fork({onSubmit}) {
     const handleDivClick = (value) => {
         setSelectedOption(value)
     };
+    // CLIENT
+    // CLIENT
+    // CLIENT
+    
+    
+
+
   return (
     <div className='Fork'>
         <span>Join as a Freelancer or Client</span>

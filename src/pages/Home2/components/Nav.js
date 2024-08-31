@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import profileImage from '../Assets/hv.jpeg'; // Path to your profile image
-
+import { Link } from 'react-router-dom';
 const Nav = ({ pare }) => {
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -33,12 +33,13 @@ const Nav = ({ pare }) => {
             </div>
             <a href="#portfolio" className='block text-center px-4 py-2 text-[#faf3e3] hover:bg-[#b56b61] rounded-md' onClick={() => setShowDropdown(false)}>Update Portfolio</a>
             <a href="#jobs" className='block px-4 py-2 text-center text-[#faf3e3] hover:bg-[#b56b61] rounded-md' onClick={() => setShowDropdown(false)}>Update Jobs</a>
-            <button
+            <Link to="/"><button
               onClick={() => { setShowDropdown(false); pare(0); }}
               className='block w-full text-left px-4 py-2 text-center text-[#faf3e3] hover:bg-red-800 rounded-md'
             >
               Log Out
-            </button>
+            </button></Link>
+            
           </div>
         )}
       </div>

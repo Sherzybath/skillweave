@@ -37,7 +37,7 @@ const Nav = () => {
               
               <button
                 onClick={() => { setShowDropdown(false); /* Add logout logic here */ }}
-                className='block w-full text-center px-4 py-2 text-[#13544e] hover:bg-red-800  hover:text-[#fff4f0]   rounded-md'
+                className='block w-full text-center px-4 py-2 text-[#13544e] hover:bg-red-900  hover:text-[#fff4f0]   rounded-md'
               >
                 Log Out
               </button>

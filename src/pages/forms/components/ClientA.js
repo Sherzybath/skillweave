@@ -98,10 +98,7 @@ const Price = ({ price, onChange }) => {
 };
 
 // ClientA Component
-const ClientA = ({onNext}) => {
-  const [title, setTitle] = useState('');
-  const [experience, setExperience] = useState('');
-  const [price, setPrice] = useState('');
+const ClientA = ({onNext, title, setTitle, price, setPrice, setExperience}) => {
   const [titleError, setTitleError] = useState('');
   
   useEffect(() => {

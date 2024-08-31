@@ -74,6 +74,7 @@ function Portfolio({ list, toggle }) {
                   <Tags key={index} tag={tag} />
                 ))}
               </div>
+              
             </div>
           </div>
         </motion.aside>

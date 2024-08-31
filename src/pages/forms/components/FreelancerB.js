@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import { FaFilePdf } from 'react-icons/fa'; // Icons for file types
 // import './styles.css'; // Import your CSS file
 
-function FreelancerB({ onNext }) {
-  const [profilePhoto, setProfilePhoto] = useState(null);
-  const [resume, setResume] = useState(null);
-  const [thumbnail, setThumbnail] = useState(null);
+function FreelancerB({ onNext, profilePhoto, setProfilePhoto, resume, thumbnail, setResume, setThumbnail }) {
+  
 
   // Handle file upload for profile photo
   const handleProfilePhotoChange = (event) => {

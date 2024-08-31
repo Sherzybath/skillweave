@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 @font-face {
   font-family: Apercu;
   src: url(../public/Fonts/Apercu/Apercu\ Mono.otf);
@@ -627,6 +630,8 @@ input[type="checkbox"]:checked::after {
 /* NOTICES */
 .notices {
   width: 75%;
+  height: 100vh;
+  overflow-y: auto;
 }
 .post:nth-child(1) {
   border: none;

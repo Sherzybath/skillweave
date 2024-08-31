@@ -7,8 +7,8 @@ const Home = () => {
     <div className='h-[100vh] flex items-center justify-between font-montserrat'>
       <div className='flex flex-col max-w-[30vw] min-w-[30vw] p-[3vw_4.3vw]'>
         <span className='text-[3vw] font-semibold'>End your work</span>
-        <span className='text-[3.3vw] font-extrabold'>Woes today!</span>
-        <span className='mt-[1vw] text-[0.8vw] font-medium'>
+        <span className='text-[3.3vw] font-extrabold transition-transform transform hover:scale-105'>Woes today!</span>
+        <span className='mt-[1vw] text-[1vw] font-medium'>
           We provide innovative solutions to streamline your business operations and enhance productivity. Discover our cutting-edge tools and services tailored to meet your unique needs.
         </span>
         <Link to="/dashboard">
@@ -25,9 +25,9 @@ const Home = () => {
         />
       </div>
       <div className='flex flex-col max-w-[30vw] min-w-[30vw] p-[3vw_4.3vw] font-aganirya'>
-        <span className='text-[3vw] font-semibold'>Find great work</span>
-        <span className='text-[3.3vw] font-extrabold'>Opportunities</span>
-        <span className='mt-[1vw] text-[0.8vw] font-medium'>
+        <span className='text-[3vw] font-semibold'>Find Epic work</span>
+        <span className='text-[3.3vw] font-extrabold transition-transform transform hover:scale-105'>Opportunities!</span>
+        <span className='mt-[1vw] text-[1vw] font-medium'>
           Search for top talent and amazing job opportunities in one place. Our platform connects you with the best candidates and employers, making job searches and hiring processes seamless.
         </span>
         <Link to="/dashboardF">

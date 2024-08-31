@@ -39,7 +39,7 @@ const Team = () => {
 
   return (
     <div id='team' data-color="white" className="team-section section font-[PPNeueMachina] py-20">
-      <h1 className="text-center font-regular text-8xl tracking-tight">The People Behind</h1>
+      <h1 className="text-center font-regular text-8xl tracking-tight transition-transform transform hover:scale-105">The Crew</h1>
       <div className="list w-full mt-10 px-10">
         {[
           {   name: "Siddharth Shaji Vethody", title: "Frontend Developer", imgSrc:sh},

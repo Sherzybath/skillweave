@@ -27,7 +27,8 @@ const upload = multer({
   limits: { fileSize: 10 * 1024 * 1024 }, // Limit file size to 10 MB
   fileFilter: (req, file, cb) => {
     const allowedTypes = {
-      image: /jpeg|jpg|png|gif/,
+      profile: /jpeg|jpg|png|gif/,
+      thumbnail: /jpeg|jpg|png|gif/,
       pdf: /pdf/
     };
     const extname = allowedTypes[file.fieldname].test(path.extname(file.originalname).toLowerCase());
@@ -269,23 +270,28 @@ app.get('/freelance', (req, res) => {
 
 
 
-app.post('/upload', isAuthenticated, upload.fields([{ name: 'image', maxCount: 1 }, { name: 'pdf', maxCount: 1 }]), (req, res) => {
-  if (!req.files || !req.files.image || !req.files.pdf) {
-    return res.status(400).json({ error: 'Both image and PDF files are required.' });
+app.post('/upload', isAuthenticated, upload.fields([{ name: 'profile', maxCount: 1 }, { name: 'pdf', maxCount: 1 }, { name: 'thumbnail', maxCount: 1 }]), (req, res) => {
+  if (!req.files || !req.files.profile || !req.files.pdf || !req.files.thumbnail) {
+    return res.status(400).json({ error: 'All files are required.' });
   }
 
-  const imageFile = req.files.image[0];
+  const profileFile = req.files.profile[0];
   const pdfFile = req.files.pdf[0];
+  const thumbnailFile = req.files.thumbnail[0];
 
   res.status(200).json({
     message: 'Files uploaded successfully!',
-    image: {
-      filename: imageFile.filename,
-      path: imageFile.path,
+    profile: {
+      filename: profileFile.filename,
+      path: profileFile.path,
     },
     pdf: {
       filename: pdfFile.filename,
       path: pdfFile.path,
+    },
+    thumbnail: {
+      filename: thumbnailFile.filename,
+      path: thumbnailFile.path,
     }
   });
 });

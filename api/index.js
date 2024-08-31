@@ -269,7 +269,7 @@ app.get('/freelance', (req, res) => {
 
 
 
-app.post('/upload', isAuthenticated, upload.fields([{ name: 'profile', maxCount: 1 }, { name: 'pdf', maxCount: 1 }, { name: 'thumbnail', maxCount: 1 }]), (req, res) => {
+app.post('/upload', upload.fields([{ name: 'profile', maxCount: 1 }, { name: 'pdf', maxCount: 1 }, { name: 'thumbnail', maxCount: 1 }]), (req, res) => {
   if (!req.files || !req.files.profile || !req.files.pdf || !req.files.thumbnail) {
     return res.status(400).json({ error: 'All files are required.' });
   }
@@ -293,6 +293,27 @@ app.post('/upload', isAuthenticated, upload.fields([{ name: 'profile', maxCount:
       path: thumbnailFile.path,
     }
   });
+});
+
+function findFilePath(directory, filenameWithoutExt) {
+  const files = fs.readdirSync(directory);
+
+  for (const file of files) {
+    const parsedFile = path.parse(file);
+    if (parsedFile.name === filenameWithoutExt) {
+      return path.join(directory, file);
+    }
+  }
+
+  return null;
+}
+
+app.get('/thumbnail', isAuthenticated, (req, res) => {
+  const directory = path.join(__dirname, 'uploads');
+  const filename = req.session.user.username + "-profile";
+  const filePath = findFilePath(directory, filename);
+  console.log(filePath);
+  res.sendFile(filePath);
 });
 
 // POST request handler for /logout

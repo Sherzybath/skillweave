@@ -1,23 +1,35 @@
-import React from 'react';
+import React from "react";
 
 const Nav = ({ pare }) => {
   return (
-    <div className='NavBar'>
-      <div className='NavLeft'>
+    <div className="NavBar border  border-b-2 ">
+      <div className="NavLeft">
         <a href="/">SkillWeave</a>
       </div>
-      <div className='NavMiddle'>
-        <a href="#about">About</a>
-        <a href="#team">Team</a>
-        <a href="#faq">FAQ</a>
-        <a href="#footer">Contact</a>
+      <div className="NavMiddle">
+        <a href="#about" className="hover:scale-[1.1]">
+          About
+        </a>
+        <a href="#team" className="hover:scale-[1.1]">
+          Team
+        </a>
+        <a href="#faq" className="hover:scale-[1.1]">
+          FAQ
+        </a>
+        <a href="#footer" className="hover:scale-[1.1]">
+          Contact
+        </a>
       </div>
-      <div className='NavRight'>
-        <button onClick={() => pare(1)}className='ColorButton2'>Sign Up</button>
-        <button onClick={() => pare(2)} className='ColorButton'>Login</button>
+      <div className="NavRight">
+        <button onClick={() => pare(1)} className="ColorButton2">
+          Sign Up
+        </button>
+        <button onClick={() => pare(2)} className="ColorButton">
+          Login
+        </button>
       </div>
     </div>
   );
-}
+};
 
 export default Nav;

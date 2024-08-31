@@ -1,8 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import bigPic from '../Assets/biggpic.png';
 
 const Home = () => {
+  
   return (
     <div className='h-[100vh] flex items-center justify-between font-montserrat'>
       <div className='flex flex-col max-w-[30vw] min-w-[30vw] p-[3vw_4.3vw]'>

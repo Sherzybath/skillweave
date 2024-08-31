@@ -19,7 +19,7 @@ const Home = ({ toggle }) => {
         <span className="text-[3vw] font-semibold text-[#333]">
           Find Your Next Project
         </span>
-        <span className="text-[3.3vw] font-extrabold text-[#f675b3]">
+        <span className="text-[3.3vw] font-extrabold text-[#f675b3] transition-transform transform hover:scale-105 ">
           Manually by Yourself!
         </span>
         <span className="mt-[1vw] text-[0.8vw] font-medium text-[#555]">
@@ -50,7 +50,7 @@ const Home = ({ toggle }) => {
         <span className="text-[3vw] font-semibold text-[#333]">
           Find Your Next Project
         </span>
-        <span className="text-[3.3vw] font-extrabold text-[#554ef3]">
+        <span className="text-[3.3vw] font-extrabold text-[#554ef3] transition-transform transform hover:scale-105">
           Using AI Assistance!
         </span>
         <span className="mt-[1vw] text-[0.8vw] font-medium text-[#555]">

@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faStar } from "@fortawesome/free-regular-svg-icons";
 import {
+  faCoffee,
   faDollar,
   faLocationDot,
   faXmark,
@@ -67,6 +68,10 @@ function Portfolio({ list, toggle }) {
                 <div className="DumbDiv">
                   <FontAwesomeIcon icon={faStar} />{" "}
                   <span>{list.experience}</span>
+                </div>
+                <div className="DumbDiv">
+                  <FontAwesomeIcon icon={faCoffee} />{" "}
+                  <span>Kofi</span>
                 </div>
               </div>
               <div className="TagSection">

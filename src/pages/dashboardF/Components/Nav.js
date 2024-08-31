@@ -25,7 +25,10 @@ const Nav = () => {
 
       <div className="NavRight flex items-center space-x-4">
         <FontAwesomeIcon icon={faMessage} className="icons text-xl" />
-        <FontAwesomeIcon icon={faCircleQuestion} className="icons text-xl" />
+        {/* Circle Question Icon with anchor link to #footer */}
+        <a href="#footer">
+          <FontAwesomeIcon icon={faCircleQuestion} className="icons text-xl" />
+        </a>
         <FontAwesomeIcon icon={faBell} className="icons text-xl" />
         <div className="relative">
           <img
@@ -40,21 +43,22 @@ const Nav = () => {
                 <div className="absolute top-[-0.5rem] right-4 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-[#b0c4c4]"></div>
               </div>
               <Link
-                to="/profile"
-                className="block px-4 py-2 text-[#13544e] hover:bg-[#b56b61] hover:text-[#fff4f0] rounded-md text-center"
+                to="/Forms"
+                className="block px-4 py-2 text-[#13544e] hover:bg-[#13544e] hover:text-[#fff4f0] rounded-md text-center"
                 onClick={() => setShowDropdown(false)}
               >
                 Update Profile
               </Link>
-
-              <button
-                onClick={() => {
-                  setShowDropdown(false); /* Add logout logic here */
-                }}
-                className="block w-full text-center px-4 py-2 text-[#13544e] hover:bg-red-900  hover:text-[#fff4f0]   rounded-md"
-              >
-                Log Out
-              </button>
+              <Link to="/">
+                <button
+                  onClick={() => {
+                    setShowDropdown(false); /* Add logout logic here */
+                  }}
+                  className="block w-full text-center px-4 py-2 text-[#13544e] hover:bg-red-700  hover:text-[#fff4f0]   rounded-md"
+                >
+                  Log Out
+                </button>
+              </Link>
             </div>
           )}
         </div>

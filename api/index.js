@@ -6,7 +6,7 @@ const session = require('express-session');
 const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
-
+const cors = require('cors')
 // Set up multer for file upload handling
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -54,6 +54,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { secure: false } // Set to true if using HTTPS
 }));
+app.use(cors());
 
 // Connect to SQLite3 database
 const db = new sqlite3.Database('./info.sqlite', (err) => {

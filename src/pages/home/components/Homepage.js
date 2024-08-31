@@ -2,7 +2,8 @@ import Main from "./Main";
 import Nav from "./Nav"
 import SignUp from "./SignUp";
 import Login from "./Login"
-import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 function changeZIndex(boxNumber) {
   var box1 = document.getElementById("signContainer");
   var box2 = document.getElementById("loginContainer");
@@ -32,22 +33,74 @@ function changeZIndex(boxNumber) {
   }
 }
 function Homepage() {
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
-  const [emailAddress, setEmailAddress] = useState('');
+  const [email, setEmailAddress] = useState('');
   const [password, setPassword] = useState('');
-  const handleSubmit = (event) => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  // Login 
+  // Login 
+  // Login 
+  const [loginusername, setLoginUsername] = useState('');
+  const [loginPassword, setLoginPassword] = useState('');
+  const handleLoginSubmit = (event) => {
     event.preventDefault();
     console.log({
-      username,
-      emailAddress,
-      password,
+      "username":loginusername,
+      "password": loginPassword
     });
+  };
+  // FETCH
+  // FETCH
+  // FETCH
+  useEffect(() => {
+    if (formSubmitted) {
+      const submitData = async () => {
+        try {
+          const response = await fetch('http://localhost:8080/signup', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username,
+              email,
+              password,
+            }),
+          });
+
+          const data = await response.json();
+          console.log('Response from server:', data);
+          if (response.ok) {
+            // If login is successful, navigate to the dashboard
+            navigate('/Forms');
+          } else {
+            // If the server returns an error, refresh the page
+            console.error('Login failed:', data.message || response.statusText);
+            alert(data.error);
+
+          }
+          // navigate('/Forms');
+          // Handle response data or errors here
+        } catch (error) {
+          console.error('Error submitting form:', error);
+        } finally {
+          setFormSubmitted(false); // Reset form submission state
+        }
+      };
+
+      submitData();
+    }
+  }, [formSubmitted, username, email, password]);
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setFormSubmitted(true); // Trigger useEffect to send POST request
   };
   return (
     <div className='homepage'>
         <div className='App'>
             <SignUp pare={changeZIndex} username={setUsername} email={setEmailAddress} password={setPassword} submit={handleSubmit}/>
-            <Login pare={changeZIndex} />
+            <Login pare={changeZIndex} email={setLoginUsername} password={setLoginPassword} submit={handleLoginSubmit}/>
             <Nav pare={changeZIndex}/>
             <Main />
         </div>

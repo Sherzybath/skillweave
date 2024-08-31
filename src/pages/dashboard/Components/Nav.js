@@ -9,10 +9,17 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 const Nav = () => {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
 
-  const toggleDropdown = () => {
-    setShowDropdown(!showDropdown);
+  const toggleProfileDropdown = () => {
+    setShowProfileDropdown(!showProfileDropdown);
+    setShowNotificationDropdown(false); // Close notification dropdown if open
+  };
+
+  const toggleNotificationDropdown = () => {
+    setShowNotificationDropdown(!showNotificationDropdown);
+    setShowProfileDropdown(false); // Close profile dropdown if open
   };
 
   return (
@@ -25,36 +32,58 @@ const Nav = () => {
 
       <div className="NavRight flex items-center space-x-4">
         <FontAwesomeIcon icon={faMessage} className="icons text-xl" />
-        <FontAwesomeIcon icon={faCircleQuestion} className="icons text-xl" />
-        <FontAwesomeIcon icon={faBell} className="icons text-xl" />
+        {/* Circle Question Icon with anchor link to #footer */}
+        <a href="#footer">
+          <FontAwesomeIcon icon={faCircleQuestion} className="icons text-xl" />
+        </a>
+
+        <div className="relative">
+          <FontAwesomeIcon
+            icon={faBell}
+            className="icons text-xl cursor-pointer"
+            onClick={toggleNotificationDropdown}
+          />
+          {showNotificationDropdown && (
+            <div className="absolute right-0 mt-2 bg-[#b0c4c4] text-[#13544e] rounded-md shadow-lg w-[13rem] h-20 ">
+              <div className="relative">
+                <div className="absolute top-[-0.5rem] right-1 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-[#b0c4c4]"></div>
+              </div>
+              <div className="block px-4 py-2 text-center mt-4 text-[#13544e]">
+                No new notifications
+              </div>
+            </div>
+          )}
+        </div>
+
         <div className="relative">
           <img
             src={logo}
             alt="Profile"
             className="w-[2.5rem] h-[2.5rem] rounded-full cursor-pointer"
-            onClick={toggleDropdown}
+            onClick={toggleProfileDropdown}
           />
-          {showDropdown && (
+          {showProfileDropdown && (
             <div className="absolute right-0 mt-2 bg-[#b0c4c4] text-[#13544e] rounded-md shadow-lg w-[12rem]">
               <div className="relative">
                 <div className="absolute top-[-0.5rem] right-4 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-[#b0c4c4]"></div>
               </div>
               <Link
-                to="/Jobs"
-                className="block px-4 py-2 text-[#13544e] hover:bg-[#b56b61] hover:text-[#fff4f0] rounded-md text-center"
-                onClick={() => setShowDropdown(false)}
+                to="/Forms"
+                className="block px-4 py-2 text-[#13544e] hover:bg-[#13544e] hover:text-[#fff4f0] rounded-md text-center"
+                onClick={() => setShowProfileDropdown(false)}
               >
-                Update Jobs
+                Update Profile
               </Link>
-
-              <button
-                onClick={() => {
-                  setShowDropdown(false); /* Add logout logic here */
-                }}
-                className="block w-full text-center px-4 py-2 text-[#13544e] hover:bg-red-800  hover:text-[#fff4f0]   rounded-md"
-              >
-                Log Out
-              </button>
+              <Link to="/">
+                <button
+                  onClick={() => {
+                    setShowProfileDropdown(false); /* Add logout logic here */
+                  }}
+                  className="block w-full text-center px-4 py-2 text-[#13544e] hover:bg-red-700 hover:text-[#fff4f0] rounded-md"
+                >
+                  Log Out
+                </button>
+              </Link>
             </div>
           )}
         </div>

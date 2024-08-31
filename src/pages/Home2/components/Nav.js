@@ -37,31 +37,32 @@ const Nav = ({ pare }) => {
           onClick={toggleDropdown}
         />
         {showDropdown && (
-          <div className="absolute  right-3 mt-2 bg-[#13544e] text-white rounded-md shadow-lg w-[12rem]">
+          <div className="absolute  right-3 mt-2 bg-[#aac7c6] text-white rounded-md shadow-lg w-[12rem]">
             <div className="relative">
               <div className="absolute top-[-0.5rem]  right-20 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-black"></div>
             </div>
-            <a
+            <Link to="/Forms"><a
               href="#portfolio"
-              className="block text-center px-4 py-2 text-[#faf3e3] hover:bg-[#b56b61] rounded-md"
+              className="block text-center px-4 py-2 text-[#13544e] hover:bg-[#13544e] hover:text-[#fff4f0] rounded-md"
               onClick={() => setShowDropdown(false)}
             >
-              Update Portfolio
-            </a>
-            <a
+              Update Profile
+            </a></Link>
+            
+            {/* <a
               href="#jobs"
-              className="block px-4 py-2 text-center text-[#faf3e3] hover:bg-[#b56b61] rounded-md"
+              className="block px-4 py-2 text-center text-[#13544e] hover:bg-[#13544e] hover:text-[#fff4f0] rounded-md"
               onClick={() => setShowDropdown(false)}
             >
               Update Jobs
-            </a>
+            </a> */}
             <Link to="/">
               <button
                 onClick={() => {
                   setShowDropdown(false);
                   pare(0);
                 }}
-                className="block w-full text-left px-4 py-2 text-center text-[#faf3e3] hover:bg-red-800 rounded-md"
+                className="block w-full text-left px-4 py-2 text-center text-[#13544e] hover:bg-red-800 hover:text-[#fff4f0] rounded-md"
               >
                 Log Out
               </button>

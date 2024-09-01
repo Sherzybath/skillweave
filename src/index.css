@@ -215,6 +215,9 @@ html {
   width: 100%;
   height: 50px;
 }
+.tt path{
+  color: #fff;
+}
 
 .divClose {
   margin-left: auto;
@@ -231,6 +234,7 @@ html {
 }
 .divClose:hover {
   background-color: #c7c9cf;
+  
 }
 
 .material-symbols-outlined {

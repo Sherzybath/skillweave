@@ -2,7 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
-const TagList = ({ onSearch, onSearchTerm }) => {
+const TagList = ({ onSearch, onSearchTerm, para}) => {
   return (
     <div className="TagList">
       <div className="ManualSearch">
@@ -10,7 +10,7 @@ const TagList = ({ onSearch, onSearchTerm }) => {
         <input
           id="searchInput" // Adding the id here
           placeholder="Search"
-          value={onSearchTerm}
+          // value={onSearchTerm}
           onChange={(e) => onSearch(e.target.value)}
         />
       </div>

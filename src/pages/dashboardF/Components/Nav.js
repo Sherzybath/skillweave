@@ -10,7 +10,8 @@ import {
 
 const Nav = () => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-  const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
+  const [showNotificationDropdown, setShowNotificationDropdown] =
+    useState(false);
 
   const toggleProfileDropdown = () => {
     setShowProfileDropdown(!showProfileDropdown);

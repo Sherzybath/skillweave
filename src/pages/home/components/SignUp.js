@@ -55,14 +55,15 @@ const SignUp = ({ pare, username, email, password, submit }) => {
               Sign In
             </button>
           </div>
+
+          <div className="liner">
+            <h5>Already a member?</h5>
+            <div className="spacer"></div>
+            <button onClick={() => pare(5)} className="redirect">
+              <u>login</u>
+            </button>
+          </div>
         </form>
-        <div className="liner">
-          <h5>Already a member?</h5>
-          <div className="spacer"></div>
-          <button onClick={() => pare(5)} className="redirect">
-            <u>login</u>
-          </button>
-        </div>
       </div>
     </div>
   );

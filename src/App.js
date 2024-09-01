@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes,} from "react-router-dom";
 import { useState } from "react";
 import Homepage from "./pages/home/components/Homepage";
 import Dashboard from "./pages/dashboard/Components/Dashboard";
@@ -22,7 +22,9 @@ function App() {
           <Route path="/payment" element={<PaymentDetailsPage />} />
           <Route path="/otp" element={<OtpVerificationPage />} />
           <Route path="/success" element={<PaymentSuccessPage />} />
-           
+          <Route path="/dashboard"></Route>
+          <Route path="/dashboard/:filter" element={<Dashboard />}></Route>
+          <Route path="/dashboardF/:filter" element={<DashboardF />}></Route>
         </Routes>
       </Router>
     </div>

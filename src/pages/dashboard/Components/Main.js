@@ -3,8 +3,8 @@ import Home from "./Home";
 import TagList from "./TagList";
 import List from "./List";
 import Footer from "./Footer";
-import { useState } from "react";
-const Main = ({ tog, Schema, display }) => {
+import { useState, useEffect } from "react";
+const Main = ({ tog, Schema, display, para }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedExperience, setSelectedExperience] = useState([]);
   const [selectedPricing, setSelectedPricing] = useState([]);
@@ -14,7 +14,9 @@ const Main = ({ tog, Schema, display }) => {
     "between $50 to $100": (price) => price >= 50 && price <= 100,
     "more than $100": (price) => price > 100,
   };
-
+  useEffect(() => {
+    setSearchTerm(para || '');
+  }, [para]);
   const filteredData = Schema.filter((service) => {
     const matchesSearchTerm =
       service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -37,7 +39,7 @@ const Main = ({ tog, Schema, display }) => {
   return (
     <div className="main">
       <Home toggle={tog} />
-      <TagList onSearch={setSearchTerm} onSearchTerm={searchTerm} />
+      <TagList onSearch={setSearchTerm} onSearchTerm={searchTerm} para={para}/>
       <List
         listing={filteredData}
         sSE={setSelectedExperience}

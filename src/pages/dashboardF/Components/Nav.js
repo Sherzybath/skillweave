@@ -10,7 +10,8 @@ import {
 
 const Nav = () => {
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
-  const [showNotificationDropdown, setShowNotificationDropdown] = useState(false);
+  const [showNotificationDropdown, setShowNotificationDropdown] =
+    useState(false);
 
   const toggleProfileDropdown = () => {
     setShowProfileDropdown(!showProfileDropdown);
@@ -30,14 +31,14 @@ const Nav = () => {
         </span>
       </div>
 
-      <div className="NavRight flex items-center space-x-4">
+      <div className="NavRight flex  justify-centeritems-center space-x-4 ">
         <FontAwesomeIcon icon={faMessage} className="icons text-xl" />
         {/* Circle Question Icon with anchor link to #footer */}
         <a href="#footer">
           <FontAwesomeIcon icon={faCircleQuestion} className="icons text-xl" />
         </a>
 
-        <div className="relative">
+        <div className="relative min-w-52 flex justify-center">
           <FontAwesomeIcon
             icon={faBell}
             className="icons text-xl cursor-pointer"
@@ -55,7 +56,7 @@ const Nav = () => {
           )}
         </div>
 
-        <div className="relative">
+        <div className="flex  min-w-52">
           <img
             src={logo}
             alt="Profile"

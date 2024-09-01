@@ -71,7 +71,7 @@ const Login = ({ pare, email, password, submit }) => {
             className="redirect"
             onclick="changeZIndex(6)"
           >
-            <u>Login</u>
+            <u>Sign in</u>
           </button>
         </div>
       </div>

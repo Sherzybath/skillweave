@@ -2,6 +2,7 @@ import Main from "./Main";
 import Nav from "./Nav"
 import SignUp from "./SignUp";
 import Login from "./Login"
+import Chatbot from "./Chatbot"
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 function changeZIndex(boxNumber) {
@@ -41,7 +42,6 @@ function Homepage({username, setUsername}) {
   // Login 
   // Login 
   // Login 
-  const [loginusername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   
   // FETCH
@@ -103,7 +103,7 @@ function Homepage({username, setUsername}) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          username: loginusername,
+          username: username,
           password: loginPassword,
         }),
       });
@@ -125,9 +125,10 @@ function Homepage({username, setUsername}) {
     <div className='homepage'>
         <div className='App'>
             <SignUp pare={changeZIndex} username={setUsername} email={setEmailAddress} password={setPassword} submit={handleSubmit}/>
-            <Login pare={changeZIndex} email={setLoginUsername} password={setLoginPassword} submit={handleLoginSubmit}/>
+            <Login pare={changeZIndex} email={setUsername} password={setLoginPassword} submit={handleLoginSubmit}/>
             <Nav pare={changeZIndex}/>
             <Main />
+            {/* <Chatbot /> */}
         </div>
     </div>
   )

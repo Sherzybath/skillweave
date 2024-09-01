@@ -53,7 +53,7 @@ const Team = () => {
         {[
           {
             name: "Siddharth Shaji Vethody",
-            title: "Frontend Developer",
+            title: "Team Lead",
             imgSrc: sh,
           },
           {
@@ -67,7 +67,7 @@ const Team = () => {
             imgSrc: hv,
           },
           { name: "Abhiraj Patwa", title: "Backend Developer", imgSrc: aj },
-          { name: "Ayush Garg", title: "Backend Developer", imgSrc: ay },
+          { name: "Ayush Garg", title: "Messaging", imgSrc: ay },
           { name: "Abhinav Sharma", title: "Frontend Developer", imgSrc: ab },
         ].map((member) => (
           <div

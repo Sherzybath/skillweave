@@ -185,7 +185,7 @@ app.post('/jobs', (req, res) => {
 
 
 // GET endpoint to retrieve all jobs
-app.get('/jobs', isAuthenticated, (req, res) => {
+app.get('/jobs', (req, res) => {
   const sql = `SELECT * FROM jobs`;
   
   db.all(sql, [], (err, rows) => {
@@ -210,7 +210,7 @@ app.get('/jobs', isAuthenticated, (req, res) => {
 
 
 // POST /freelance route
-app.post('/freelance', isAuthenticated, (req, res) => {
+app.post('/freelance', (req, res) => {
   const {
     title,
     daysDelivery,
@@ -220,11 +220,11 @@ app.post('/freelance', isAuthenticated, (req, res) => {
     description,
     skills,
     experience,
+    username
   } = req.body;
 
   // Convert skills array to a comma-separated string
   const skillsStr = skills.join(',');
-  const username = req.session.user.username
 
   // SQL query to insert a new freelance record
   const sql = `
@@ -269,7 +269,7 @@ app.get('/freelance', (req, res) => {
 
 
 
-app.post('/upload', isAuthenticated, upload.fields([{ name: 'profile', maxCount: 1 }, { name: 'pdf', maxCount: 1 }, { name: 'thumbnail', maxCount: 1 }]), (req, res) => {
+app.post('/upload', upload.fields([{ name: 'profile', maxCount: 1 }, { name: 'pdf', maxCount: 1 }, { name: 'thumbnail', maxCount: 1 }]), (req, res) => {
   if (!req.files || !req.files.profile || !req.files.pdf || !req.files.thumbnail) {
     return res.status(400).json({ error: 'All files are required.' });
   }
@@ -293,6 +293,27 @@ app.post('/upload', isAuthenticated, upload.fields([{ name: 'profile', maxCount:
       path: thumbnailFile.path,
     }
   });
+});
+
+function findFilePath(directory, filenameWithoutExt) {
+  const files = fs.readdirSync(directory);
+
+  for (const file of files) {
+    const parsedFile = path.parse(file);
+    if (parsedFile.name === filenameWithoutExt) {
+      return path.join(directory, file);
+    }
+  }
+
+  return null;
+}
+
+app.get('/thumbnail', isAuthenticated, (req, res) => {
+  const directory = path.join(__dirname, 'uploads');
+  const filename = req.session.user.username + "-profile";
+  const filePath = findFilePath(directory, filename);
+  console.log(filePath);
+  res.sendFile(filePath);
 });
 
 // POST request handler for /logout

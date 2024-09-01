@@ -4,22 +4,27 @@ import { AnimatePresence } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faStar } from "@fortawesome/free-regular-svg-icons";
 import {
+  faCoffee,
   faDollar,
   faLocationDot,
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+
 const Tags = ({ tag }) => {
   return <div className="DisplayTag">{tag}</div>;
 };
 
 function Portfolio({ list, toggle }) {
+  const navigate = useNavigate(); // Initialize navigate
+
+  const handleKofiClick = () => {
+    navigate('/payment'); // Navigate to PaymentPage
+  };
+
   return (
     <div className="Port overflow-x: hidden;">
-      <AnimatePresence
-      // onExitComplete={() => {
-      //   toggle; // Set list to null after exit animation completes
-      // }}
-      >
+      <AnimatePresence>
         <motion.aside
           initial={{ x: "100%" }}
           animate={{ x: list ? 0 : "100%" }}
@@ -51,9 +56,6 @@ function Portfolio({ list, toggle }) {
               </div>
 
               <div className="twoSection">
-                {/* <div className='DumbDiv'>
-                        <FontAwesomeIcon icon={faClock}/><span>30 days</span>
-                    </div> */}
                 <div className="DumbDiv">
                   <span>
                     <FontAwesomeIcon icon={faLocationDot} /> India
@@ -68,12 +70,19 @@ function Portfolio({ list, toggle }) {
                   <FontAwesomeIcon icon={faStar} />{" "}
                   <span>{list.experience}</span>
                 </div>
+                <div className="DumbDiv">
+                  <button onClick={handleKofiClick} className="flex items-center space-x-2">
+                    <FontAwesomeIcon icon={faCoffee} />{" "}
+                    <span>Kofi</span>
+                  </button>
+                </div>
               </div>
               <div className="TagSection">
                 {list.skills.map((tag, index) => (
                   <Tags key={index} tag={tag} />
                 ))}
               </div>
+              
             </div>
           </div>
         </motion.aside>

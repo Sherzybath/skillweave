@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-const FreelanceQuiz = ({ onNext }) => {
-  const [selectedOption, setSelectedOption] = useState('');
+const FreelanceQuiz = ({ onNext, selectedOption, setSelectedOption}) => {
+ 
 
   const handleOptionChange = (option) => {
     setSelectedOption(option);

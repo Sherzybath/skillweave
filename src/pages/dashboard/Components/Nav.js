@@ -32,7 +32,8 @@ const Nav = () => {
       </div>
 
       <div className="NavRight flex items-center space-x-4">
-        <FontAwesomeIcon icon={faMessage} className="icons text-xl" />
+      <Link to="/chat"><FontAwesomeIcon icon={faMessage} className="icons text-xl" /></Link>
+        
         {/* Circle Question Icon with anchor link to #footer */}
         <a href="#footer">
           <FontAwesomeIcon icon={faCircleQuestion} className="icons text-xl" />

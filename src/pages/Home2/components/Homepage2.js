@@ -2,11 +2,10 @@ import Main from "./Main";
 import Nav from "./Nav"
 import SignUp from "./SignUp";
 import Login from "./Login"
-
+import Chatbot from "./Chatbot"
 function changeZIndex(boxNumber) {
   var box1 = document.getElementById("signContainer");
   var box2 = document.getElementById("loginContainer");
-
   if (boxNumber === 1) {
     box1.style.zIndex = 2; 
     box1.style.opacity = 1;
@@ -39,6 +38,7 @@ function Homepage() {
             <Login pare={changeZIndex} />
             <Nav pare={changeZIndex}/>
             <Main />
+            <Chatbot />
         </div>
     </div>
   )

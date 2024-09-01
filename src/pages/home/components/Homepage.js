@@ -128,7 +128,8 @@ function Homepage({username, setUsername}) {
             <Login pare={changeZIndex} email={setUsername} password={setLoginPassword} submit={handleLoginSubmit}/>
             <Nav pare={changeZIndex}/>
             <Main />
-            {/* <Chatbot /> */}
+            <Chatbot />
+
         </div>
     </div>
   )

@@ -24,7 +24,6 @@ function App() {
           <Route path="/success" element={<PaymentSuccessPage />} />
           <Route path="/dashboard"></Route>
           <Route path="/dashboard/:filter" element={<Dashboard />}></Route>
-          <Route path="/dashboardF/:filter" element={<DashboardF />}></Route>
         </Routes>
       </Router>
     </div>

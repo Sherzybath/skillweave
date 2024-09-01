@@ -40,7 +40,7 @@ const Nav = ({ pare }) => {
         {showDropdown && (
           <div className="absolute  right-3 mt-2 bg-[#aac7c6] text-white rounded-md shadow-lg w-[12rem]">
             <div className="relative">
-              <div className="absolute top-[-0.5rem]  right-20 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-black"></div>
+              <div className="absolute top-[-0.5rem]  right-20 w-4 h-0  border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-black"></div>
             </div>
             <Link to="/Forms">
               <a

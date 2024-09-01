@@ -13,7 +13,6 @@ function DashboardF() {
   const toggleComponent = () => {
     setShowComponent((prevState) => !prevState);
   };
-  
   const blogSchema = [
     {
       thumbnail: "/thumbnails/Raviel.png",

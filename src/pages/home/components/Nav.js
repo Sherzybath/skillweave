@@ -20,11 +20,11 @@ const Nav = ({ pare }) => {
           Contact
         </a>
       </div>
-      <div className="NavRight">
-        <button onClick={() => pare(1)} className="ColorButton2">
+      <div className="NavRight min-w-52">
+        <button onClick={() => pare(1)} className="ColorButton2 h-[2.5rem] ">
           Sign Up
         </button>
-        <button onClick={() => pare(2)} className="ColorButton">
+        <button onClick={() => pare(2)} className="ColorButton h-[2.5rem]">
           Login
         </button>
       </div>

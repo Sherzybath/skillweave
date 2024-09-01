@@ -97,9 +97,10 @@ html {
 .App .NavBar .NavRight .ColorButton,
 .App .NavBar .NavRight .ColorButton2 {
   background-color: #130035; /* Button background color */
-  padding: 10px 20px;
+  padding: 7px 20px;
   border-radius: 1vw;
   text-align: center;
+  font-size: medium;
   color: #fdf3e9; /* Button text color */
   display: table-cell;
   vertical-align: middle;

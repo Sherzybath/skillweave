@@ -31,14 +31,14 @@ const Nav = () => {
         </span>
       </div>
 
-      <div className="NavRight flex  justify-centeritems-center space-x-4 ">
+      <div className="NavRight flex items-center space-x-4">
         <FontAwesomeIcon icon={faMessage} className="icons text-xl" />
         {/* Circle Question Icon with anchor link to #footer */}
         <a href="#footer">
           <FontAwesomeIcon icon={faCircleQuestion} className="icons text-xl" />
         </a>
 
-        <div className="relative min-w-52 flex justify-center">
+        <div className="relative">
           <FontAwesomeIcon
             icon={faBell}
             className="icons text-xl cursor-pointer"
@@ -56,7 +56,7 @@ const Nav = () => {
           )}
         </div>
 
-        <div className="flex  min-w-52">
+        <div className="relative">
           <img
             src={logo}
             alt="Profile"

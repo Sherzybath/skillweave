@@ -29,7 +29,7 @@ const Nav = ({ pare }) => {
           Contact
         </a>
       </div>
-      <div className="relative">
+      <div className="relative min-w-52 flex justify-center">
         <img
           src={profileImage}
           alt="Profile"
@@ -41,14 +41,16 @@ const Nav = ({ pare }) => {
             <div className="relative">
               <div className="absolute top-[-0.5rem]  right-20 w-4 h-0 border-x-[0.5rem] border-x-transparent border-b-[0.5rem] border-black"></div>
             </div>
-            <Link to="/Forms"><a
-              href="#portfolio"
-              className="block text-center px-4 py-2 text-[#13544e] hover:bg-[#13544e] hover:text-[#fff4f0] rounded-md"
-              onClick={() => setShowDropdown(false)}
-            >
-              Update Profile
-            </a></Link>
-            
+            <Link to="/Forms">
+              <a
+                href="#portfolio"
+                className="block text-center px-4 py-2 text-[#13544e] hover:bg-[#13544e] hover:text-[#fff4f0] rounded-md"
+                onClick={() => setShowDropdown(false)}
+              >
+                Update Profile
+              </a>
+            </Link>
+
             {/* <a
               href="#jobs"
               className="block px-4 py-2 text-center text-[#13544e] hover:bg-[#13544e] hover:text-[#fff4f0] rounded-md"

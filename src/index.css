@@ -97,9 +97,10 @@ html {
 .App .NavBar .NavRight .ColorButton,
 .App .NavBar .NavRight .ColorButton2 {
   background-color: #130035; /* Button background color */
-  padding: 10px 20px;
+  padding: 7px 20px;
   border-radius: 1vw;
   text-align: center;
+  font-size: medium;
   color: #fdf3e9; /* Button text color */
   display: table-cell;
   vertical-align: middle;
@@ -195,7 +196,7 @@ html {
   height: 90vh;
   background-color: #eacbca;
 
-  position: absolute;
+  position: fixed;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -215,7 +216,7 @@ html {
   width: 100%;
   height: 50px;
 }
-.tt path{
+.tt path {
   color: #fff;
 }
 
@@ -234,7 +235,6 @@ html {
 }
 .divClose:hover {
   background-color: #c7c9cf;
-  
 }
 
 .material-symbols-outlined {
@@ -1237,6 +1237,10 @@ strong {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

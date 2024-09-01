@@ -4,14 +4,14 @@ import { FaFilePdf } from 'react-icons/fa'; // Icons for file types
 
 function FreelancerB({ onNext, profilePhoto, setProfilePhoto, resume, thumbnail, setResume, setThumbnail }) {
   
-
+  
   // Handle file upload for profile photo
   const handleProfilePhotoChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const validImageTypes = ['image/jpeg', 'image/png'];
       if (validImageTypes.includes(file.type)) {
-        setProfilePhoto(URL.createObjectURL(file)); // Create a URL for the selected file
+        setProfilePhoto(event.target.files[0]);
       } else {
         console.log('Please upload a photo in JPEG or PNG format.');
         document.getElementById('profile-photo-input').value = ''; // Reset the input
@@ -25,14 +25,14 @@ function FreelancerB({ onNext, profilePhoto, setProfilePhoto, resume, thumbnail,
     if (file) {
       const validImageTypes = ['image/jpeg', 'image/png'];
       if (validImageTypes.includes(file.type)) {
-        setThumbnail(URL.createObjectURL(file)); // Create a URL for the selected file
+        setThumbnail(event.target.files[0]); // Create a URL for the selected file
       } else {
         console.log('Please upload a thumbnail in JPEG or PNG format.');
         document.getElementById('thumbnail-input').value = ''; // Reset the input
       }
     }
   };
-
+  
   // Handle file upload for resume
   const handleResumeChange = (event) => {
     const file = event.target.files[0];
@@ -69,14 +69,38 @@ function FreelancerB({ onNext, profilePhoto, setProfilePhoto, resume, thumbnail,
   const handleNext = () => {
     onNext(); // Proceed to the next step if an option is selected
   };
+  const onFormSubmit = async (event) => {
+    event.preventDefault();
 
+    if (!profilePhoto || !resume || thumbnail) {
+      alert('Please select both an image and a PDF file.');
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append('image', profilePhoto);
+    formData.append('pdf', resume);
+    formData.append('image', thumbnail);
+    try {
+      const response = await fetch('http://localhost:8080/jobs', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await response.json();
+      alert('Files uploaded successfully!');
+      console.log('Response:', data);
+    } catch (error) {
+
+      console.error('Error:', error);
+    }
+  };
   return (
     <div className="flex flex-col items-center space-y-6 bg-[#faf3e3]">
       {/* Progress Indicator */}
       <div className="progress-indicator flex justify-center items-center mb-0">
         <p className="progress-text text-[#133b3a] text-lg font-semibold">2/3</p>
       </div>
-      <div className="w-full max-w-lg p-6 border border-gray-200 rounded-lg shadow-lg bg-[#133b3a] text-[#faf3e3]">
+      <form onSubmit={onFormSubmit} className="w-full max-w-lg p-6 border border-gray-200 rounded-lg shadow-lg bg-[#133b3a] text-[#faf3e3]">
         <div className="flex flex-col items-center space-y-6">
           {/* Profile Photo Upload */}
           <div className="w-full max-w-xs flex flex-col items-center">
@@ -206,10 +230,10 @@ function FreelancerB({ onNext, profilePhoto, setProfilePhoto, resume, thumbnail,
             </div>
           </div>
         </div>
-      </div>
+      </form>
       {/* Progress Message */}
       <div className="bottom-section">
-        <button onClick={handleNext} className="next-button">Next</button>
+        <button type='submit' onClick={handleNext} className="next-button">Next</button>
       </div>
     </div>
   );

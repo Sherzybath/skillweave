@@ -8,7 +8,7 @@ const PaymentDetailsPage = () => {
   const [expiryDate, setExpiryDate] = useState("");
   const [cvv, setCvv] = useState("");
   const [cardholderName, setCardholderName] = useState("");
-  const [amount, setAmount] = useState("3.06"); // Initialize with a default amount
+  const [amount, setAmount] = useState("40"); // Initialize with a default amount
   const [expiryError, setExpiryError] = useState("");
   const [formError, setFormError] = useState("");
   const [loading, setLoading] = useState(true); // Initially set loading to true

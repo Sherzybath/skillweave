@@ -10,12 +10,13 @@ const Nav = ({ pare }) => {
         <a href="#about" className="hover:scale-[1.1]">
           About
         </a>
-        <a href="#team" className="hover:scale-[1.1]">
-          Team
-        </a>
         <a href="#faq" className="hover:scale-[1.1]">
           FAQ
         </a>
+        <a href="#team" className="hover:scale-[1.1]">
+          Team
+        </a>
+        
         <a href="#footer" className="hover:scale-[1.1]">
           Contact
         </a>

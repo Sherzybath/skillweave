@@ -14,11 +14,9 @@ const Home = () => {
         <span className='mt-[1vw] text-[1vw] font-medium'>
           We provide innovative solutions to streamline your business operations and enhance productivity. Discover our cutting-edge tools and services tailored to meet your unique needs.
         </span>
-        
-          <button onClick={onClick} className='mt-[2vw] bg-[#130035] w-[9vw] h-[3vw] text-[#edebf0] rounded-[2vw] shadow-lg hover:bg-[#1a003e] hover:shadow-xl transform hover:scale-105 transition-all duration-300'>
+          <Link to="/dashboard"><button  className='mt-[2vw] bg-[#130035] w-[9vw] h-[3vw] text-[#edebf0] rounded-[2vw] shadow-lg hover:bg-[#1a003e] hover:shadow-xl transform hover:scale-105 transition-all duration-300'>
             Find Work
-          </button>
-        
+          </button></Link> 
       </div>
       <div className='text-center text-[5vw]'>
         <img
@@ -34,9 +32,9 @@ const Home = () => {
           Search for top talent and amazing job opportunities in one place. Our platform connects you with the best candidates and employers, making job searches and hiring processes seamless.
         </span>
         
-          <button onClick={onClick} className='mt-[2vw] bg-[#130035] w-[9vw] h-[3vw] text-[#edebf0] rounded-[2vw] shadow-lg hover:bg-[#1a003e] hover:shadow-xl transform hover:scale-105 transition-all duration-300'>
+        <Link to="dashboardF"><button className='mt-[2vw] bg-[#130035] w-[9vw] h-[3vw] text-[#edebf0] rounded-[2vw] shadow-lg hover:bg-[#1a003e] hover:shadow-xl transform hover:scale-105 transition-all duration-300'>
             Find Talent
-          </button>
+          </button></Link>  
         
       </div>
     </div>

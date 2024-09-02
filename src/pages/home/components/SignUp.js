@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBell,
@@ -6,7 +7,7 @@ import {
   faMessage,
 } from "@fortawesome/free-regular-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-const SignUp = ({ pare, username, email, password, submit }) => {
+const SignUp = ({ pare, username, email, password}) => {
   return (
     <div className="box" id="signContainer">
       <div className="myDiv" id="signUpForm">
@@ -15,7 +16,7 @@ const SignUp = ({ pare, username, email, password, submit }) => {
             <FontAwesomeIcon icon={faXmark} />
           </button>
         </div>
-        <form id="form1" className="forms" method="post" onSubmit={submit}>
+        <form id="form1" className="forms" method="post" >
           <div className="heading">
             <span className="basic">Sign in to skillWeave</span>
           </div>
@@ -51,9 +52,10 @@ const SignUp = ({ pare, username, email, password, submit }) => {
             />
           </div>
           <div className="confirm">
-            <button className="submit" type="submit">
+          <Link to="/Forms"><button className="submit" type="submit">
               Sign In
-            </button>
+            </button></Link>
+            
           </div>
 
           <div className="liner">

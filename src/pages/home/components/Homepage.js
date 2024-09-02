@@ -47,85 +47,85 @@ function Homepage({username, setUsername}) {
   // FETCH
   // FETCH
   // FETCH
-  useEffect(() => {
-    if (formSubmitted) {
-      const submitData = async () => {
-        try {
-          const response = await fetch('http://localhost:8080/signup', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              username: username,
-              email: email,
-              password: password,
-            }),
-          });
+  // useEffect(() => {
+  //   if (formSubmitted) {
+  //     const submitData = async () => {
+  //       try {
+  //         const response = await fetch('http://localhost:8080/signup', {
+  //           method: 'POST',
+  //           headers: {
+  //             'Content-Type': 'application/json',
+  //           },
+  //           body: JSON.stringify({
+  //             username: username,
+  //             email: email,
+  //             password: password,
+  //           }),
+  //         });
 
-          const data = await response.json();
-          console.log('Response from server:', data);
-          if (response.ok) {
-            // If login is successful, navigate to the dashboard
-            navigate('/Forms');
-          } else {
-            // If the server returns an error, refresh the page
-            console.error('Login failed:', data.message || response.statusText);
-            alert(data.error);
+  //         const data = await response.json();
+  //         console.log('Response from server:', data);
+  //         if (response.ok) {
+  //           // If login is successful, navigate to the dashboard
+  //           navigate('/Forms');
+  //         } else {
+  //           // If the server returns an error, refresh the page
+  //           console.error('Login failed:', data.message || response.statusText);
+  //           alert(data.error);
 
-          }
-          // navigate('/Forms');
-          // Handle response data or errors here
-        } catch (error) {
-          console.error('Error submitting form:', error);
-        } finally {
-          setFormSubmitted(false); // Reset form submission state
-        }
-      };
+  //         }
+  //         // navigate('/Forms');
+  //         // Handle response data or errors here
+  //       } catch (error) {
+  //         console.error('Error submitting form:', error);
+  //       } finally {
+  //         setFormSubmitted(false); // Reset form submission state
+  //       }
+  //     };
 
-      submitData();
-    }
-  }, [formSubmitted, username, email, password]);
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setFormSubmitted(true); // Trigger useEffect to send POST request
-  };
-  // LOGIN
-  // LOGIN
-  // LOGIN
-  const handleLoginSubmit = async (event) => {
-    event.preventDefault();
+  //     submitData();
+  //   }
+  // }, [formSubmitted, username, email, password]);
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   setFormSubmitted(true); // Trigger useEffect to send POST request
+  // };
+  // // LOGIN
+  // // LOGIN
+  // // LOGIN
+  // const handleLoginSubmit = async (event) => {
+  //   event.preventDefault();
 
-    try {
-      const response = await fetch('http://localhost:8080/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          username: username,
-          password: loginPassword,
-        }),
-      });
-      const data = await response.json();
-      console.log('Response from server:', data);
-      if (response.ok) {
-        // If login is successful, navigate to the dashboard or home page
-        navigate('/2'); // or navigate('/home') as per your routing
-      } else {
-        // If the server returns an error, display the specific error message
-        alert(data.error || 'Login failed. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('An error occurred. Please try again.');
-    }
-  };
+  //   try {
+  //     const response = await fetch('http://localhost:8080/login', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         username: username,
+  //         password: loginPassword,
+  //       }),
+  //     });
+  //     const data = await response.json();
+  //     console.log('Response from server:', data);
+  //     if (response.ok) {
+  //       // If login is successful, navigate to the dashboard or home page
+  //       navigate('/2'); // or navigate('/home') as per your routing
+  //     } else {
+  //       // If the server returns an error, display the specific error message
+  //       alert(data.error || 'Login failed. Please try again.');
+  //     }
+  //   } catch (error) {
+  //     console.error('Error submitting form:', error);
+  //     alert('An error occurred. Please try again.');
+  //   }
+  // };
   return (
     <div className='homepage'>
         <div className='App'>
-            <SignUp pare={changeZIndex} username={setUsername} email={setEmailAddress} password={setPassword} submit={handleSubmit}/>
-            <Login pare={changeZIndex} email={setUsername} password={setLoginPassword} submit={handleLoginSubmit}/>
+            <SignUp pare={changeZIndex} username={setUsername} email={setEmailAddress} password={setPassword} />
+            <Login pare={changeZIndex} email={setUsername} password={setLoginPassword} />
             <Nav pare={changeZIndex}/>
             <Main />
             <Chatbot />

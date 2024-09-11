@@ -40,9 +40,13 @@ Ensure you have the following installed:
    cd skillweave
    
 2. Install Dependencies:
-    npm install
+    ```bash
+    npm install   
+
 
 3. Start servers:
+    ```bash
+    npm install 
     npm start
     cd /api
     npm start     
